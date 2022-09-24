@@ -3,11 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=saxenabhishek&label=Views&color=0e75b6&style=plastic" alt="saxenabhishek" /> </p>
 
-- 🔭 I’m currently working on [ProGan](https://github.com/saxenabhishek/ProGan)
-
-- 🌱 I’m currently learning **Tensor RT**
-
-- 👯 I’m looking to collaborate on [Maze Game](https://github.com/saxenabhishek/Maze-game)
+<a href="https://web.saxenabhishek.dev/src/SaxenaAbhishek.pdf">Resume<a/>
 
 - 💬 Ask me about **Machine Leaning, Neural networks, APIs**
 
