@@ -1,4 +1,8 @@
-## 👋 Hi, I'm Abhishek Saxena
+
+<h2>  
+<img src="https://emojis.slackmojis.com/emojis/images/1660415445/60820/grinning-cat-with-smiling-eyes.gif?1660415445">
+Hi, I'm Abhishek Saxena
+</h2>
 
 I'm a software engineer who enjoys building robust infrastructure, clean systems, and tools that scale. Right now, I'm working on my Master’s in Computer Engineering [@TheGeorgeWashingtonUniversity](https://github.com/gwuniversity), diving into intelligent systems and machine learning.
 
@@ -14,6 +18,8 @@ I'm a software engineer who enjoys building robust infrastructure, clean systems
 - 🎨 [PaletteNet](https://github.com/saxenabhishek/PaletteNet-Implementation): A deep learning model that recolors images using custom palettes — built the dataset, training loop, and everything in between.
 
 
+If you're building something ambitious, curious, or just weird, let's talk.
+
 <div align="left">
   <a href="https://linkedin.com/in/saxenabhishek" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge" />
@@ -23,4 +29,3 @@ I'm a software engineer who enjoys building robust infrastructure, clean systems
   </a>
 </div>
 
-If you're building something ambitious, curious, or just weird — let's talk.
