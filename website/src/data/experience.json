@@ -1,0 +1,38 @@
+{
+  "experiences": [
+    {
+      "company": "Fidelity Investments",
+      "role": "Software Engineer & Full Stack Intern",
+      "period": "Aug 2023 – Jan 2025",
+      "highlights": [
+        "Led a 6-person team delivering a 401(k) optimization MVP projected to raise AUM by $1.7M",
+        "Developed integrations and real-time data sync solutions",
+        "Implemented automated onboarding processes",
+        "Optimized CI/CD pipelines for improved deployment efficiency"
+      ],
+      "technologies": ["Java", "Spring Boot", "React", "AWS"]
+    },
+    {
+      "company": "Tune AI",
+      "role": "Software Developer",
+      "period": "Jun 2022 – Jan 2023",
+      "highlights": [
+        "Built real-time logging & monitoring app handling 227 requests/sec",
+        "Optimized Kubernetes deployments for better resource utilization",
+        "Implemented DB migration resulting in 1.45x faster response times"
+      ],
+      "technologies": ["Python", "FastAPI", "MongoDB", "Kubernetes"]
+    },
+    {
+      "company": "Frappe Technologies",
+      "role": "Software Developer",
+      "period": "Jul 2021 – Apr 2022",
+      "highlights": [
+        "Developed a flexible Query Builder system",
+        "Created schema migration system for database updates",
+        "Implemented productivity improvements across the platform"
+      ],
+      "technologies": ["Python", "JavaScript", "PostgreSQL", "Redis"]
+    }
+  ]
+}

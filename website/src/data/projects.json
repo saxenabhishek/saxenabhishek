@@ -1,0 +1,26 @@
+{
+  "projects": [
+    {
+      "name": "Progressive GAN",
+      "description": "PyTorch implementation of Nvidia's ProGAN with simplified training API",
+      "highlights": [
+        "Implemented progressive growing architecture",
+        "Trained on Fashion-MNIST & CIFAR-10 datasets",
+        "Achieved stable training and high-quality image generation"
+      ],
+      "technologies": ["PyTorch", "Python", "CUDA"],
+      "githubLink": "https://github.com/saxenabhishek/progressive-gan"
+    },
+    {
+      "name": "Palette Net",
+      "description": "Autoencoder-based deep learning model for artistic image recoloring",
+      "highlights": [
+        "Built custom dataset of 40k images",
+        "Developed novel architecture for style transfer",
+        "Implemented real-time inference pipeline"
+      ],
+      "technologies": ["TensorFlow", "Python", "OpenCV"],
+      "githubLink": "https://github.com/saxenabhishek/palette-net"
+    }
+  ]
+}
