@@ -2,97 +2,72 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically handle the form submission
-    console.log("Form submitted:", formData);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const socialLinks = [
+    { name: 'GitHub', url: 'https://github.com/saxenabhishek', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/saxenabhishek', icon: 'linkedin' },
+    { name: 'Twitter', url: 'https://twitter.com/saxenabhishek', icon: 'twitter' }
+  ];
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="contact p-8 space-y-6"
+      animate={{ opacity: 1 }}
+      className="h-full flex flex-col justify-between p-4"
     >
-      <h2 className="text-3xl font-heading font-bold text-accent1">
-        Contact Me
-      </h2>
-      <p className="text-textSecondary text-lg">
-        I'm always open to discussing new projects, opportunities, or
-        collaborations.
-      </p>
+      <div>
+        <h2 className="text-2xl font-heading font-bold text-accent1 mb-4">Let's Connect</h2>
+        <p className="text-sm text-textSecondary mb-6">
+          Got an idea? Let's bring it to life!
+        </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl">
-        <div className="space-y-2">
-          <label htmlFor="name" className="block text-textSecondary">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 rounded-lg bg-accent2/5 border border-accent2/20 text-textPrimary focus:outline-none focus:border-accent2"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-textSecondary">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 rounded-lg bg-accent2/5 border border-accent2/20 text-textPrimary focus:outline-none focus:border-accent2"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="message" className="block text-textSecondary">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows="4"
-            className="w-full px-4 py-2 rounded-lg bg-accent2/5 border border-accent2/20 text-textPrimary focus:outline-none focus:border-accent2"
-          ></textarea>
-        </div>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          type="submit"
-          className="bg-accent2 text-white px-6 py-3 rounded-lg font-medium w-full md:w-auto"
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="space-y-2"
         >
-          Send Message
-        </motion.button>
-      </form>
+          <a
+            href="mailto:your.email@example.com"
+            className="flex items-center gap-2 text-accent2 hover:text-accent1 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <span className="text-sm">Send an email</span>
+          </a>
+        </motion.div>
 
-      <div className="flex gap-6 pt-6">
+        <div className="flex gap-4 mt-6">
+          {socialLinks.map((link, index) => (
+            <motion.a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-textSecondary hover:text-accent2 transition-colors"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <span className="text-sm">{link.name}</span>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="text-center mt-6"
+      >
+        <span className="text-xs text-textSecondary">
+          Based in Washington D.C.
+        </span>
+      </motion.div>
+    {/* </motion.section>
+  );> */}
         <a
           href="https://linkedin.com/in/saxenabhishek"
           target="_blank"
@@ -121,7 +96,7 @@ const Contact = () => {
             <path d="M0 3v18h24V3H0zm21.518 2L12 12.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z" />
           </svg>
         </a>
-      </div>
+      {/* </div> */}
     </motion.section>
   );
 };

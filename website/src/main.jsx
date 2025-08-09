@@ -6,9 +6,11 @@ import "./assets/styles/main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <BentoGrid />
+      <main className="flex-1 container mx-auto px-4 py-8">
+        <BentoGrid />
+      </main>
     </div>
   </React.StrictMode>
 );
