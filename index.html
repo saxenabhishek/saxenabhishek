@@ -1,76 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abhishek Saxena</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Saxena</title>
+  <style>
+    * {box-sizing: border-box;}
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    nav button {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: #eee;
+    }
+    #back-button {
+      margin-left: auto;
+      display: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 80px 1rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, opacity 0.3s, order 0.3s;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    .card.faded {
+      opacity: 0.2;
+    }
+    .card.active {
+      transform: scale(1.05);
+      grid-column: span 2;
+      order: -1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button data-category="about">About</button>
+    <button data-category="projects">Projects</button>
+    <button data-category="experience">Experience</button>
+    <button data-category="education">Education</button>
+    <button id="back-button">Back</button>
+  </nav>
 
-    <!-- Favicon: You can replace the emoji data URL with your own .ico or .png -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>"
-    />
+  <div class="grid">
+    <div class="card about"><h2>Abhishek Saxena</h2><p>Engineer & Developer</p></div>
+    <div class="card projects"><h2>Project One</h2><p>Brief description</p></div>
+    <div class="card projects"><h2>Project Two</h2><p>Brief description</p></div>
+    <div class="card experience"><h2>Company A</h2><p>Role and impact</p></div>
+    <div class="card experience"><h2>Company B</h2><p>Role and impact</p></div>
+    <div class="card education"><h2>University XYZ</h2><p>Degree achieved</p></div>
+    <div class="card education"><h2>High School ABC</h2><p>Graduation year</p></div>
+  </div>
 
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(135deg, #ccc, #fff);
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        color: #333;
+  <script>
+  const filterButtons = document.querySelectorAll('nav button[data-category]');
+  const backButton = document.getElementById('back-button');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.category;
+      filter(cat);
+    });
+  });
+
+  backButton.addEventListener('click', reset);
+
+  function filter(cat) {
+    document.querySelectorAll('.card').forEach(card => {
+      const match = card.classList.contains(cat) || (cat === 'experience' && card.classList.contains('education'));
+      if (match) {
+        card.classList.add('active');
+        card.classList.remove('faded');
+      } else {
+        card.classList.add('faded');
+        card.classList.remove('active');
       }
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-      }
-      p {
-        font-size: 1.2rem;
-        color: #555;
-        margin-bottom: 1.5rem;
-      }
-      .card {
-        background: white;
-        padding: 2rem 3rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        animation: fadeIn 1s ease-out;
-      }
-      button {
-        background-color: #4a90e2;
-        border: none;
-        color: white;
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-      button:hover {
-        background-color: #357abd;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>Hello 👋</h1>
-      <p>More content coming soon.</p>
-      <button>Clicky</button>
-    </div>
-  </body>
+    });
+    backButton.style.display = 'block';
+  }
+
+  function reset() {
+    document.querySelectorAll('.card').forEach(card => card.classList.remove('active', 'faded'));
+    backButton.style.display = 'none';
+  }
+  </script>
+</body>
 </html>
