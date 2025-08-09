@@ -25,9 +25,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
 
   const experienceCards = experienceData.experiences.map((exp, i) => ({
     id: `exp-${i}`,
-    component: (
-      <ExperienceCard experience={exp} expanded={filter === "experience"} />
-    ),
+    component: <ExperienceCard experience={exp} />,
     tags: ["experience"],
   }));
 
@@ -36,20 +34,21 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       id: "header",
       component: <Header activeFilter={filter} onFilterChange={onFilterChange} />,
       tags: ["header"],
-      className: "md:col-span-2 lg:col-span-3",
+      className: "md:col-span-2 lg:col-span-4 sticky top-0 z-10",
     },
+    { id: "mode", component: <ModeToggleCard mode={mode} toggleMode={toggleMode} />, tags: ["utility"], className: "row-span-1" },
+    { id: "profile", component: <ProfileCard />, tags: ["intro"], className: "row-span-2" },
+    { id: "summary", component: <SummaryCard />, tags: ["intro"], className: "lg:col-span-2" },
     {
       id: "about",
       component: <About />,
       tags: ["intro"],
-      className: "md:col-span-2",
+      className: "md:col-span-2 lg:col-span-2 lg:row-span-2",
     },
-    { id: "profile", component: <ProfileCard />, tags: ["intro"] },
-    { id: "summary", component: <SummaryCard />, tags: ["intro"] },
-    { id: "whimsy", component: <FidgetCard />, tags: ["intro"] },
-    { id: "projects-header", component: <SectionCard title="Projects" />, tags: ["projects"] },
+    { id: "whimsy", component: <FidgetCard />, tags: ["intro"], className: "row-span-1" },
+    { id: "projects-header", component: <SectionCard title="Projects" />, tags: ["projects"], className: "lg:col-span-4" },
     ...projectCards,
-    { id: "experience-header", component: <SectionCard title="Experience" />, tags: ["experience"] },
+    { id: "experience-header", component: <SectionCard title="Experience" />, tags: ["experience"], className: "lg:col-span-4" },
     ...experienceCards,
     {
       id: "education",
@@ -58,31 +57,32 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
     },
     { id: "skills", component: <Skills />, tags: ["skills"] },
     { id: "contact", component: <Contact />, tags: ["contact"] },
-    { id: "mode", component: <ModeToggleCard mode={mode} toggleMode={toggleMode} />, tags: ["utility"] },
   ];
 
+  const headerCard = cards.find((c) => c.id === "header");
+  const rest = cards.filter((c) => c.id !== "header");
   const sortedCards = filter
-    ? [...cards].sort((a, b) => {
+    ? [headerCard, ...rest.sort((a, b) => {
         const aMatch = a.tags.includes(filter);
         const bMatch = b.tags.includes(filter);
         return aMatch === bMatch ? 0 : aMatch ? -1 : 1;
-      })
+      })]
     : cards;
 
   return (
     <AnimatePresence>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-auto">
         {sortedCards.map((card) => {
           const isActive = !filter || card.tags.includes(filter);
           return (
             <motion.div
               layoutId={card.id}
               key={card.id}
-              className={`bg-white dark:bg-primary/20 shadow-lg ring-1 ring-black/5 rounded-xl p-6 flex flex-col justify-center ${
+              className={`bg-white/60 dark:bg-primary/40 backdrop-blur-md border border-black/5 dark:border-white/10 rounded-xl p-6 flex flex-col justify-center ${
                 card.className || ""
               } ${
                 filter && card.tags.includes(filter)
-                  ? "md:col-span-2 lg:col-span-3"
+                  ? "sm:col-span-2 lg:col-span-4"
                   : ""
               } ${filter && !isActive ? "opacity-20" : ""}`}
             >
