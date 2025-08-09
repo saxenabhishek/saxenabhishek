@@ -1,5 +1,3 @@
-import React from "react";
-
 const menu = [
   { label: "Projects", value: "projects" },
   { label: "Experience", value: "experience" },
@@ -17,7 +15,7 @@ const Header = ({ activeFilter, onFilterChange }) => {
             <button
               key={item.value}
               onClick={() => onFilterChange(item.value)}
-              className={`uppercase tracking-wide text-sm md:text-base transition-colors ${
+              className={`tracking-wide text-sm md:text-base transition-colors ${
                 activeFilter === item.value
                   ? "text-accent2"
                   : "text-textPrimary hover:text-accent2"

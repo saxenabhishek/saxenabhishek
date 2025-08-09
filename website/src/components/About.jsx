@@ -3,8 +3,16 @@ import { motion } from "framer-motion";
 
 const About = () => {
   const skills = [
-    "Python", "Java", "TypeScript", "React", "PyTorch", "AWS",
-    "Docker", "Kubernetes", "Spring Boot", "FastAPI"
+    "Python",
+    "Java",
+    "TypeScript",
+    "React",
+    "PyTorch",
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "Spring Boot",
+    "FastAPI",
   ];
 
   return (
@@ -24,7 +32,9 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-heading font-bold mb-2">
               Hi, I'm Abhishek
             </h1>
-            <p className="text-xl text-accent1">Software Engineer & Problem Solver</p>
+            <p className="text-xl text-accent1">
+              Software Engineer & Problem Solver
+            </p>
           </div>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -40,7 +50,8 @@ const About = () => {
           transition={{ delay: 0.3 }}
           className="text-textSecondary"
         >
-          MS in Computer Engineering @ GWU. Building scalable systems and ML solutions.
+          MS in Computer Engineering @ GWU. Building scalable systems and ML
+          solutions.
         </motion.p>
 
         <motion.div

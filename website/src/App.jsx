@@ -6,7 +6,7 @@ import "./assets/styles/main.css";
 const App = () => {
   const [filter, setFilter] = useState(null);
   return (
-    <div className="min-h-screen bg-primary text-textPrimary">
+    <div className="min-h-screen text-textPrimary ">
       <Header activeFilter={filter} onFilterChange={setFilter} />
       <main className="pt-20 p-4 max-w-7xl mx-auto">
         <BentoGrid filter={filter} />

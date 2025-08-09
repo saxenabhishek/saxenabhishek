@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Intro from "./Intro.jsx";
 import ProjectCard from "./ProjectCard.jsx";
 import ExperienceCard from "./ExperienceCard.jsx";
@@ -12,18 +11,27 @@ import experienceData from "../data/experience.json";
 const BentoGrid = ({ filter }) => {
   const projectCards = projectsData.projects.map((project, i) => ({
     id: `project-${i}`,
-    component: <ProjectCard project={project} expanded={filter === "projects"} />,
+    component: (
+      <ProjectCard project={project} expanded={filter === "projects"} />
+    ),
     tags: ["projects"],
   }));
 
   const experienceCards = experienceData.experiences.map((exp, i) => ({
     id: `exp-${i}`,
-    component: <ExperienceCard experience={exp} expanded={filter === "experience"} />,
+    component: (
+      <ExperienceCard experience={exp} expanded={filter === "experience"} />
+    ),
     tags: ["experience"],
   }));
 
   const cards = [
-    { id: "intro", component: <Intro />, tags: ["intro"], className: "md:col-span-2" },
+    {
+      id: "intro",
+      component: <Intro />,
+      tags: ["intro"],
+      className: "md:col-span-2",
+    },
     ...projectCards,
     ...experienceCards,
     {
@@ -44,26 +52,28 @@ const BentoGrid = ({ filter }) => {
     : cards;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
-      {sortedCards.map((card) => {
-        const isActive = !filter || card.tags.includes(filter);
-        return (
-          <motion.div
-            layout
-            key={card.id}
-            className={`bg-primary/50 rounded-2xl p-6 flex flex-col justify-center ${
-              card.className || ""
-            } ${
-              filter && card.tags.includes(filter)
-                ? "md:col-span-2 lg:col-span-3"
-                : ""
-            } ${filter && !isActive ? "opacity-20" : ""}`}
-          >
-            {card.component}
-          </motion.div>
-        );
-      })}
-    </div>
+    <AnimatePresence>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
+        {sortedCards.map((card) => {
+          const isActive = !filter || card.tags.includes(filter);
+          return (
+            <motion.div
+              layoutId={card.id}
+              key={card.id}
+              className={` bg-primary/20 shadow-lg ring-1 ring-black/5 rounded-xl p-6 flex flex-col justify-center ${
+                card.className || ""
+              } ${
+                filter && card.tags.includes(filter)
+                  ? "md:col-span-2 lg:col-span-3"
+                  : ""
+              } ${filter && !isActive ? "opacity-20" : ""}`}
+            >
+              {card.component}
+            </motion.div>
+          );
+        })}
+      </div>
+    </AnimatePresence>
   );
 };
 
