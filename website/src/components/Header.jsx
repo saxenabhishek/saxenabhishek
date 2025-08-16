@@ -16,7 +16,6 @@ const Header = ({ activeFilter, onFilterChange }) => (
     >
       <FiHome className="text-2xl" />
     </button>
-    <FiHexagon className="text-2xl text-accent" />
     <div className="flex gap-4 items-center">
       {menu.map((item) => (
         <button
