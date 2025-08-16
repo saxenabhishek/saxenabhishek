@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const Contact = () => {
   const links = [
-    { name: "Email", url: "mailto:your.email@example.com" },
-    { name: "GitHub", url: "https://github.com/saxenabhishek" },
-    { name: "LinkedIn", url: "https://linkedin.com/in/saxenabhishek" },
+    { name: "Email", url: "mailto:your.email@example.com", icon: FiMail },
+    { name: "GitHub", url: "https://github.com/saxenabhishek", icon: FiGithub },
+    { name: "LinkedIn", url: "https://linkedin.com/in/saxenabhishek", icon: FiLinkedin },
   ];
 
   return (
@@ -15,7 +16,7 @@ const Contact = () => {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <h2 className="text-2xl font-heading font-bold text-accent1 mb-4">
+        <h2 className="text-2xl font-heading font-semibold text-accent mb-4">
           Contact
         </h2>
         <div className="space-y-2">
@@ -25,14 +26,15 @@ const Contact = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-accent2 hover:text-accent1"
+              className="flex items-center gap-2 text-accent underline"
             >
-              {link.name}
+              <link.icon />
+              <span>{link.name} ↗</span>
             </a>
           ))}
         </div>
       </div>
-      <p className="text-xs text-textSecondary mt-4">
+      <p className="text-xs text-gray-700 dark:text-textSecondary mt-4">
         Based in Washington D.C.
       </p>
     </motion.div>

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A modern, bento-grid style portfolio website built with React and Vite, featuring a dark theme with neon accents and smooth animations.
+A modern, bento-grid style portfolio website built with React and Vite, featuring a dark theme with pastel accents and smooth animations.
 
 ## Technology Stack
 
@@ -46,7 +46,7 @@ website/
 
    - CSS Grid-based layout system
    - Responsive breakpoints for mobile, tablet, and desktop
-   - Glass-morphism design elements
+   - Glass-morphism cards with subtle borders and backdrop blur
 
 2. **Interactive UI Elements**
 
@@ -56,7 +56,7 @@ website/
 
 3. **Theme and Styling**
 
-   - Dark theme with neon accents (green #00FFB2 and blue #1E90FF)
+   - Dark theme with pastel accents
    - Custom font pairing (Poppins for headings, Inter for body text)
    - Consistent spacing and typography system
 
@@ -157,7 +157,7 @@ The site is built using Vite and can be deployed to any static hosting service:
 ## Brand & Look
 
 - **Mode:** dark-first with light-mode toggle (dedicated card).
-- **One accent color:** `#22E6A8` (Teal/Mint). Use only for interactive elements and key highlights.
+- **One accent color:** `#A5B4FC` (pastel indigo). Use only for interactive elements and key highlights.
 - **Neutrals:**
 
   - Bg base: `#0D0F12`
@@ -288,7 +288,7 @@ The site is built using Vite and can be deployed to any static hosting service:
 ### Card hover & focus
 
 - Hover: subtle lift + border accent tint.
-- Focus (keyboard): 2px focus ring `#22E6A8aa` outside border.
+- Focus (keyboard): 2px focus ring `#A5B4FCaa` outside border.
 
 ### Link behavior
 
@@ -324,7 +324,7 @@ The site is built using Vite and can be deployed to any static hosting service:
 
 ```js
 --bg: #0D0F12; --card: #14171B; --card-hover:#171B20;
---border:#1F242B; --text:#E8ECEF; --muted:#9AA6B2; --accent:#22E6A8;
+--border:#1F242B; --text:#E8ECEF; --muted:#9AA6B2; --accent:#A5B4FC;
 ```
 
 ## Assets & Content To Add (to cure “bleakness”)

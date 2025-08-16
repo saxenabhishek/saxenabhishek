@@ -1,12 +1,18 @@
 import React from "react";
+import educationData from "../data/education.json";
 
 const Education = ({ expanded }) => (
   <div>
-    <h2 className="text-2xl font-heading font-bold text-accent1 mb-2">Education</h2>
-    <p className="text-textSecondary">M.S. Computer Engineering, GWU</p>
-    {expanded && (
-      <p className="text-textSecondary mt-2">2019 – 2021</p>
-    )}
+    <h2 className="text-2xl font-heading font-semibold text-accent mb-2">Education</h2>
+    {educationData.education.map((edu) => (
+      <div key={edu.institution} className="text-gray-700 dark:text-textSecondary mb-2">
+        <p className="font-heading font-medium">{edu.degree}</p>
+        <p className="text-sm">{edu.institution}</p>
+        {expanded && (
+          <p className="text-xs mt-1">{edu.period}</p>
+        )}
+      </div>
+    ))}
   </div>
 );
 
