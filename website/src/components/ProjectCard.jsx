@@ -9,7 +9,7 @@ const ProjectCard = ({ project, expanded }) => (
       {project.description}
     </p>
     <div className="flex flex-wrap gap-2 mt-2">
-      {project.technologies.map((tech) => (
+      {project.technologies.slice(0, 2).map((tech) => (
         <span
           key={tech}
           className="bg-accent/10 text-accent px-2 py-1 rounded-full text-xs"
