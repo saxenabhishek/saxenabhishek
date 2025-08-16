@@ -10,12 +10,12 @@ const About = () => (
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="space-y-4"
+      className="space-y-2"
     >
-      <h1 className="text-4xl md:text-5xl font-heading font-semibold mb-2">
+      <h1 className="text-2xl md:text-2xl font-heading font-semibold">
         Hi, I'm Abhishek
       </h1>
-      <p className="text-xl text-accent">Software Engineer & Problem Solver</p>
+      <p className="text-xl text-accent">Software Engineer</p>
       <p className="text-gray-700 dark:text-textSecondary">
         MS in Computer Engineering @ GWU. Building scalable systems and ML
         solutions.
