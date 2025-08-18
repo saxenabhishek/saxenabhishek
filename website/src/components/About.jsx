@@ -12,14 +12,10 @@ const About = () => (
       transition={{ delay: 0.2 }}
       className="space-y-2"
     >
-      <h1 className="text-2xl md:text-2xl font-heading font-semibold">
-        Hi, I'm Abhishek
+      <h1 className="text-xl md:text-2xl font-medium capitalize">
+        Abhishek Saxena
       </h1>
-      <p className="text-xl text-accent">Software Engineer</p>
-      <p className="text-gray-700 dark:text-textSecondary">
-        MS in Computer Engineering @ GWU. Building scalable systems and ML
-        solutions.
-      </p>
+      <p className="text-lg font-thin">Software Engineer</p>
     </motion.div>
   </motion.section>
 );
