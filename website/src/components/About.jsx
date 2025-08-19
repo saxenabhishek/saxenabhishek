@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const About = () => {

@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const ProjectCardHolder = ({ projectData, expanded }) => {
   const len = projectData.projects.length;

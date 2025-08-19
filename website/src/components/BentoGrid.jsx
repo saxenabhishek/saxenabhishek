@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./Skills.jsx";
 import Education from "./Education.jsx";

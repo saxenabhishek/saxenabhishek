@@ -1,5 +1,5 @@
 import ExperienceCard from "./ExperienceCard";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const ExperienceCardHolder = ({ experienceData, expanded }) => {
   const len = experienceData.experiences.length;
