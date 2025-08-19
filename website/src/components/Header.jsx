@@ -9,19 +9,15 @@ const menu = [
 
 const Header = ({ activeFilter, onFilterChange }) => (
   <div className="flex justify-between items-center">
-    <button
-      onClick={() => onFilterChange(null)}
-      aria-label="Home"
-      className="text-accent"
-    >
-      <FiHome className="text-2xl" />
+    <button onClick={() => onFilterChange(null)} aria-label="Home" className="">
+      <FiHome className="text-base sm:text-xl" />
     </button>
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-2 md:gap-8 items-center">
       {menu.map((item) => (
         <button
           key={item.value}
           onClick={() => onFilterChange(item.value)}
-          className={`tracking-wide text-sm md:text-base transition-colors ${
+          className={`tracking-tighter text-xs uppercase font-light md:text-sm transition-colors ${
             activeFilter === item.value
               ? "text-accent underline"
               : "text-black dark:text-textPrimary hover:text-accent"

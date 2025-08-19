@@ -7,7 +7,7 @@ const ModeToggleCard = ({ mode, toggleMode }) => (
   >
     <span className="relative inline-block w-12 h-6 rounded-full bg-black/20 dark:bg-white/20 transition-colors">
       <span
-        className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-accent transition-transform ${
+        className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white transition-transform ${
           mode === "light" ? "translate-x-6" : ""
         }`}
       />

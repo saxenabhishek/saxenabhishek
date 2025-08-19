@@ -12,12 +12,12 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-heading font-semibold text-accent mb-4">Skills</h2>
+      <h2 className="text-2xl font-heading font-semibold mb-4">Skills</h2>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span
             key={skill}
-            className="bg-accent/10 text-accent px-2 py-1 rounded-full text-sm"
+            className="bg-white/10 px-2 py-1 rounded-full text-sm"
           >
             {skill}
           </span>
