@@ -36,7 +36,7 @@ const Contact = () => {
           ))}
         </div>
       </div>
-      <p className="text-xs text-gray-700 dark:text-textSecondary mt-4">
+      <p className="text-xs text-gray-700 dark:text-text-secondary mt-4">
         Based in Washington D.C.
       </p>
     </motion.div>

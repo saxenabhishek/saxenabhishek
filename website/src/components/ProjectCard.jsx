@@ -9,7 +9,7 @@ const ProjectCard = ({ project, expanded }) => (
         <h3 className="text-lg font-heading">{project.name}</h3>
         <LuCircleArrowOutUpRight />
       </span>
-      <p className="text-sm text-gray-700 dark:text-textSecondary mt-2">
+      <p className="text-sm text-gray-700 dark:text-text-secondary mt-2">
         {project.description}
       </p>
       <div className="flex flex-wrap gap-2 mt-2">
@@ -23,7 +23,7 @@ const ProjectCard = ({ project, expanded }) => (
         ))}
       </div>
       {expanded && (
-        <ul className="list-disc list-inside text-sm text-gray-700 dark:text-textSecondary mt-2 space-y-1 flex-1">
+        <ul className="list-disc list-inside text-sm text-gray-700 dark:text-text-secondary mt-2 space-y-1 flex-1">
           {project.highlights.map((h) => (
             <li key={h}>{h}</li>
           ))}

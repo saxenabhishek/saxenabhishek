@@ -20,7 +20,7 @@ const Header = ({ activeFilter, onFilterChange }) => (
           className={`tracking-tighter text-xs uppercase font-light md:text-sm transition-colors ${
             activeFilter === item.value
               ? "text-accent underline"
-              : "text-black dark:text-textPrimary hover:text-accent"
+              : "text-black dark:text-text-primary hover:text-accent"
           }`}
         >
           {item.label}
