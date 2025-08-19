@@ -6,7 +6,11 @@ const Contact = () => {
   const links = [
     { name: "Email", url: "mailto:your.email@example.com", icon: FiMail },
     { name: "GitHub", url: "https://github.com/saxenabhishek", icon: FiGithub },
-    { name: "LinkedIn", url: "https://linkedin.com/in/saxenabhishek", icon: FiLinkedin },
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/saxenabhishek",
+      icon: FiLinkedin,
+    },
   ];
 
   return (
@@ -16,9 +20,7 @@ const Contact = () => {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <h2 className="text-2xl font-heading font-semibold text-accent mb-4">
-          Contact
-        </h2>
+        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
         <div className="space-y-2">
           {links.map((link) => (
             <a
@@ -26,7 +28,7 @@ const Contact = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-accent underline"
+              className="flex items-center gap-2  underline"
             >
               <link.icon />
               <span>{link.name} ↗</span>

@@ -3,14 +3,12 @@ import educationData from "../data/education.json";
 
 const Education = ({ expanded }) => (
   <div>
-    <h2 className="text-2xl font-heading font-semibold text-accent mb-2">Education</h2>
+    <h2 className="text-2xl font-light uppercase mb-2">Education</h2>
     {educationData.education.map((edu) => (
-      <div key={edu.institution} className="text-gray-700 dark:text-textSecondary mb-2">
-        <p className="font-heading font-medium">{edu.degree}</p>
-        <p className="text-sm">{edu.institution}</p>
-        {expanded && (
-          <p className="text-xs mt-1">{edu.period}</p>
-        )}
+      <div key={edu.institution} className=" mb-2">
+        <p className="text-lg ">{edu.institution}</p>
+        <p className="text-sm text-gray-400">{edu.degree}</p>
+        <p className="text-xs mt-1 text-gray-400 font-light">{edu.period}</p>
       </div>
     ))}
   </div>
