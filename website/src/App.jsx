@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div className={mode === "dark" ? "dark" : ""}>
-      <div className="min-h-screen font-body  text-black  bg-black [background:radial-gradient(125%_125%_at_50%_10%,#444_40%,#1c1c1c_100%)] dark:text-text-primary">
+      <div className="min-h-screen antialiased font-body text-black dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800">
         <main className="p-4 max-w-7xl mx-auto">
           <BentoGrid
             filter={filter}

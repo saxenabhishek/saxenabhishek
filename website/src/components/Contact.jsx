@@ -4,7 +4,7 @@ import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const Contact = () => {
   const links = [
-    { name: "Email", url: "mailto:your.email@example.com", icon: FiMail },
+    { name: "Email", url: "mailto:abhishekkumar.saxena@gwu.edu", icon: FiMail },
     { name: "GitHub", url: "https://github.com/saxenabhishek", icon: FiGithub },
     {
       name: "LinkedIn",

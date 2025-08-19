@@ -95,7 +95,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
 
   sortedCards.unshift(headerCard);
   return (
-    <motion.div className="grid gap-2 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+    <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
       {sortedCards.map((card) => {
         const isActive =
           !filter || card.tags.includes(filter) || card.tags.includes("header");
@@ -105,7 +105,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
             key={card.id}
             className={`${
               card.className || ""
-            } bg-stone-800/50 p-4 justify-center shadow-md rounded-md backdrop-blur-md ${
+            } p-4 justify-center dark:border-white/50 border-black/50 border rounded-lg backdrop-blur-md ${
               filter && !isActive ? "opacity-20" : ""
             } ${
               filter && card.tags.includes(filter)
