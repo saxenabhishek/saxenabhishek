@@ -1,10 +1,8 @@
-import React from "react";
-
 const ProfileCard = () => (
   <img
-    src="https://picsum.photos/300/400"
+    src="assets/profile-edited.png"
     alt="Profile"
-    className="rounded-lg mb-4 object-fill"
+    className="rounded-lg object-cover bg-orange-50"
   />
 );
 

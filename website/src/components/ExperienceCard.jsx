@@ -1,27 +1,40 @@
-import React from "react";
+import { motion, AnimatePresence } from "motion/react";
 
-const ExperienceCard = ({ experience }) => (
-  <div className="flex flex-col h-full">
-    <h3 className="text-xl font-heading font-semibold text-accent">
+const ExperienceCard = ({ experience, expanded }) => (
+  <>
+    <h3 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
       {experience.company}
     </h3>
-    <p className="text-sm text-gray-700 dark:text-textSecondary">
+    <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
       {experience.role}
     </p>
-    <p className="text-xs text-gray-500 dark:text-textSecondary mt-1">
+    <p className="text-xs md:text-sm leading-5 pb-4 text-neutral-600 dark:text-neutral-400">
       {experience.period}
     </p>
-    <div className="flex flex-wrap gap-2 mt-auto pt-4">
-      {experience.technologies.map((tech) => (
-        <span
+    {expanded && (
+      <motion.ul
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 100 }}
+        className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-2"
+      >
+        {experience.highlights.map((resumeItem) => {
+          return <li key={resumeItem}>{resumeItem}</li>;
+        })}
+      </motion.ul>
+    )}
+
+    <motion.div className="flex flex-wrap gap-2 mt-auto pb-4">
+      {experience.technologies.map((tech, idx) => (
+        <motion.span
+          layoutId={`${experience.company}-${idx}`}
           key={tech}
-          className="bg-accent/10 text-accent px-2 py-1 rounded-full text-xs"
+          className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider"
         >
           {tech}
-        </span>
+        </motion.span>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </>
 );
 
 export default ExperienceCard;

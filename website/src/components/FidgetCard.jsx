@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LuCat, LuLamp } from "react-icons/lu";
 
 const FidgetCard = () => {

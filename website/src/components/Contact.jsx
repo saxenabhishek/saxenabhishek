@@ -1,12 +1,16 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import { motion } from "motion/react";
+import { FiMail, FiGithub, FiLinkedin, FiHeart } from "react-icons/fi";
 
 const Contact = () => {
   const links = [
-    { name: "Email", url: "mailto:your.email@example.com", icon: FiMail },
+    { name: "Email", url: "mailto:abhishekkumar.saxena@gwu.edu", icon: FiMail },
     { name: "GitHub", url: "https://github.com/saxenabhishek", icon: FiGithub },
-    { name: "LinkedIn", url: "https://linkedin.com/in/saxenabhishek", icon: FiLinkedin },
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/saxenabhishek",
+      icon: FiLinkedin,
+    },
   ];
 
   return (
@@ -16,9 +20,7 @@ const Contact = () => {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <h2 className="text-2xl font-heading font-semibold text-accent mb-4">
-          Contact
-        </h2>
+        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
         <div className="space-y-2">
           {links.map((link) => (
             <a
@@ -26,7 +28,7 @@ const Contact = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-accent underline"
+              className="flex items-center gap-2  underline"
             >
               <link.icon />
               <span>{link.name} ↗</span>
@@ -34,8 +36,8 @@ const Contact = () => {
           ))}
         </div>
       </div>
-      <p className="text-xs text-gray-700 dark:text-textSecondary mt-4">
-        Based in Washington D.C.
+      <p className="text-xs text-neutral-700 dark:text-text-secondary mt-4">
+        Made with <FiHeart className="inline-block" /> by Abhishek Saxena
       </p>
     </motion.div>
   );
