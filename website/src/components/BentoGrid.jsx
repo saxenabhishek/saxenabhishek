@@ -53,6 +53,8 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
         <ExperienceCardHolder
           experienceData={experienceData}
           expanded={filter === "experience"}
+          onFilterChange={onFilterChange}
+          mode={mode}
         />
       ),
       tags: ["experience"],
@@ -60,7 +62,13 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
     },
     {
       id: "education",
-      component: <Education expanded={filter === "experience"} />,
+      component: (
+        <Education
+          expanded={filter === "experience"}
+          onFilterChange={onFilterChange}
+          mode={mode}
+        />
+      ),
       tags: ["experience"],
       className: "lg:col-span-2",
     },
@@ -70,6 +78,8 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
         <ProjectCardHolder
           projectData={projectsData}
           expanded={filter === "projects"}
+          onFilterChange={onFilterChange}
+          mode={mode}
         />
       ),
       tags: ["projects"],
