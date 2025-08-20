@@ -7,7 +7,9 @@ const ExperienceCardHolder = ({ experienceData, expanded }) => {
 
   return (
     <motion.div layout="position">
-      <h1 className="text-xl uppercase mb-2 font-semibold">Experiences</h1>
+      <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4">
+        Experiences
+      </h1>
       {exp.map((exp, idx) => {
         return (
           <motion.div
