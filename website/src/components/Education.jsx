@@ -1,8 +1,14 @@
-import React from "react";
 import educationData from "../data/education.json";
+import ExpandShrinkBtn from "./ExpandShrinkButton";
 
-const Education = ({ expanded }) => (
-  <div>
+const Education = ({ expanded, onFilterChange, mode }) => (
+  <div className="relative">
+    <ExpandShrinkBtn
+      onFilterChange={onFilterChange}
+      value={"experience"}
+      expanded={expanded}
+      mode={mode}
+    />
     <h2 className="text-2xl leading-9 tracking-wide font-heading pb-4">
       Education
     </h2>

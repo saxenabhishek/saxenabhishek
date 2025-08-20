@@ -1,15 +1,27 @@
+import ExpandShrinkBtn from "./ExpandShrinkButton";
 import ExperienceCard from "./ExperienceCard";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
-const ExperienceCardHolder = ({ experienceData, expanded }) => {
+const ExperienceCardHolder = ({
+  experienceData,
+  expanded,
+  onFilterChange,
+  mode,
+}) => {
   const len = experienceData.experiences.length;
   const exp = experienceData.experiences;
 
   return (
-    <motion.div layout="position">
+    <motion.div layout="position" className="relative">
       <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4">
         Experiences
       </h1>
+      <ExpandShrinkBtn
+        onFilterChange={onFilterChange}
+        value={"experience"}
+        expanded={expanded}
+        mode={mode}
+      />
       {exp.map((exp, idx) => {
         return (
           <motion.div
