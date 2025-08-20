@@ -1,4 +1,5 @@
 import { FaGithub } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const ProjectCard = ({ project, expanded }) => (
   <>
@@ -34,11 +35,16 @@ const ProjectCard = ({ project, expanded }) => (
         ))}
       </div>
       {expanded && (
-        <ul className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-2">
+        <motion.ul
+          layout
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-2"
+        >
           {project.highlights.map((h) => (
             <li key={h}>{h}</li>
           ))}
-        </ul>
+        </motion.ul>
       )}
     </div>
   </>
