@@ -20,7 +20,9 @@ const Contact = () => {
       className="h-full flex flex-col justify-between"
     >
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Contact</h2>
+        <h2 className="text-2xl leading-9 pb-4 font-heading tracking-wide">
+          Contact
+        </h2>
         <div className="space-y-2">
           {links.map((link) => (
             <a
