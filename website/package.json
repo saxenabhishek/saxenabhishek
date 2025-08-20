@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build-dev": "vite build --base /website/dist",
-    "build-prod": "vite build --base /saxenabhishek",
+    "build-prod": "vite build --base /saxenabhishek --outDir ./../../docs --emptyOutDir",
     "preview": "vite preview",
     "lint": "eslint ."
   },
