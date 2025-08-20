@@ -17,10 +17,10 @@ const Header = ({ activeFilter, onFilterChange }) => (
         <button
           key={item.value}
           onClick={() => onFilterChange(item.value)}
-          className={`tracking-tighter text-xs uppercase font-light md:text-sm transition-colors ${
+          className={`tracking-wide text-xs leading-5 font-body md:text-sm transition-colors ${
             activeFilter === item.value
-              ? "text-accent underline"
-              : "text-black dark:text-text-primary hover:text-accent"
+              ? "text-teal-400 underline"
+              : "text-black dark:text-text-primary hover:text-teal-400"
           }`}
         >
           {item.label}
