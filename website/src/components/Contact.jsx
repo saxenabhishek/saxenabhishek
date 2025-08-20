@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin, FiHeart } from "react-icons/fi";
 
 const Contact = () => {
   const links = [
@@ -36,8 +36,8 @@ const Contact = () => {
           ))}
         </div>
       </div>
-      <p className="text-xs text-gray-700 dark:text-text-secondary mt-4">
-        Based in Washington D.C.
+      <p className="text-xs text-neutral-700 dark:text-text-secondary mt-4">
+        Made with <FiHeart className="inline-block" /> by Abhishek Saxena
       </p>
     </motion.div>
   );

@@ -1,8 +1,8 @@
 const ProfileCard = () => (
   <img
-    src="assets/profile.jpeg"
+    src="assets/profile-edited.png"
     alt="Profile"
-    className="rounded-lg object-cover"
+    className="rounded-lg object-cover bg-orange-50"
   />
 );
 
