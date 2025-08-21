@@ -45,7 +45,6 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       tags: ["skills"],
       className: "lg:col-span-2",
     },
-
     {
       id: "summary",
       component: <SummaryCard />,
@@ -69,12 +68,12 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       id: "education",
       component: (
         <Education
-          expanded={filter === "experience"}
+          expanded={filter === "education"}
           onFilterChange={onFilterChange}
           mode={mode}
         />
       ),
-      tags: ["experience"],
+      tags: ["education"],
       className: "lg:col-span-2",
     },
     {
@@ -117,7 +116,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
               key={card.id}
               className={`${
                 card.className || ""
-              } p-4 justify-center dark:border-white/50 border-black/50 border backdrop-blur-md  ${
+              } p-4 justify-center dark:border-white/50 border-black/50 border backdrop-blur-md overflow-clip ${
                 filter && !isActive ? "opacity-20" : ""
               } ${
                 filter && card.tags.includes(filter)
