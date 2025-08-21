@@ -14,6 +14,15 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
   }, [mode, initialColor]);
   useEffect(() => setColor(), [setColor]);
   const color = useMotionTemplate`oklch(${initialColor})`;
+  const handleClick = () => {
+    expanded ? onFilterChange(null) : onFilterChange(value);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    setColor();
+  };
   return (
     <motion.span
       layout
@@ -22,7 +31,7 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       onHoverStart={() => initialColor.set("77.7% 0.152 181.912")}
       onHoverEnd={setColor}
       className="absolute top-0 right-0 p-1"
-      onClick={() => (expanded ? onFilterChange(null) : onFilterChange(value))}
+      onClick={handleClick}
     >
       {expanded ? (
         <RiFullscreenExitLine className="w-6 h-6" />
