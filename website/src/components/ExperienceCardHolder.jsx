@@ -8,13 +8,12 @@ const ExperienceCardHolder = ({
   onFilterChange,
   mode,
 }) => {
-  const len = experienceData.experiences.length;
   const exp = experienceData.experiences;
 
   return (
     <motion.div layout="position" className="relative">
       <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4">
-        Experiences
+        Experience
       </h1>
       <ExpandShrinkBtn
         onFilterChange={onFilterChange}
@@ -32,7 +31,11 @@ const ExperienceCardHolder = ({
             key={`exp-${idx}`}
             className="pb-2"
           >
-            <ExperienceCard experience={exp} expanded={expanded} />
+            <ExperienceCard
+              experience={exp}
+              expanded={expanded}
+              idx={`exp-${idx}`}
+            />
           </motion.div>
         );
       })}
