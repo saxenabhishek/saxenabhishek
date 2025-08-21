@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion, LayoutGroup } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./Skills.jsx";
 import Education from "./Education.jsx";
@@ -25,21 +25,26 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       id: "about",
       component: <About />,
       tags: ["intro"],
-      className: "md:col-span-2",
+      className: "md:col-span-2 lg:row-span-2",
     },
     {
       id: "profile",
       component: <ProfileCard />,
       tags: ["intro"],
-      className: "p-[0px] ",
+      className: "p-[0px] lg:row-span-2",
     },
     {
       id: "mode",
       component: <ModeToggleCard mode={mode} toggleMode={toggleMode} />,
       tags: ["utility"],
-      className: "",
+      className: "lg:col-span-2",
     },
-    { id: "skills", component: <Skills />, tags: ["skills"] },
+    {
+      id: "skills",
+      component: <Skills />,
+      tags: ["skills"],
+      className: "lg:col-span-2",
+    },
 
     {
       id: "summary",
@@ -99,28 +104,33 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
   sortedCards.unshift(headerCard);
   return (
     <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-      {sortedCards.map((card) => {
-        const isActive =
-          !filter || card.tags.includes(filter) || card.tags.includes("header");
-        return (
-          <motion.div
-            layoutId={card.id}
-            key={card.id}
-            className={`${
-              card.className || ""
-            } p-4 justify-center dark:border-white/50 border-black/50 border rounded-lg backdrop-blur-md  ${
-              filter && !isActive ? "opacity-20" : ""
-            } ${
-              filter && card.tags.includes(filter)
-                ? "md:col-span-3 lg:col-span-5"
-                : ""
-            }
+      <LayoutGroup>
+        {sortedCards.map((card) => {
+          const isActive =
+            !filter ||
+            card.tags.includes(filter) ||
+            card.tags.includes("header");
+          return (
+            <motion.div
+              style={{ borderRadius: "8px" }}
+              layoutId={card.id}
+              key={card.id}
+              className={`${
+                card.className || ""
+              } p-4 justify-center dark:border-white/50 border-black/50 border backdrop-blur-md  ${
+                filter && !isActive ? "opacity-20" : ""
+              } ${
+                filter && card.tags.includes(filter)
+                  ? "md:col-span-3 lg:col-span-5"
+                  : ""
+              }
             `}
-          >
-            {card.component}
-          </motion.div>
-        );
-      })}
+            >
+              {card.component}
+            </motion.div>
+          );
+        })}
+      </LayoutGroup>
     </motion.div>
   );
 };
