@@ -1,6 +1,6 @@
 import { useState } from "react";
 import BentoGrid from "./components/BentoGrid.jsx";
-import "/main.css";
+import "./main.css";
 
 const App = () => {
   const [filter, setFilter] = useState(null);

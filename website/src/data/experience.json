@@ -2,37 +2,52 @@
   "experiences": [
     {
       "company": "Fidelity Investments",
-      "role": "Software Engineer & Full Stack Intern",
+      "role": "Software Engineer",
       "period": "Aug 2023 – Jan 2025",
       "highlights": [
-        "Led a 6-person team delivering a 401(k) optimization MVP projected to raise AUM by $1.7M",
-        "Developed integrations and real-time data sync solutions",
-        "Implemented automated onboarding processes",
-        "Optimized CI/CD pipelines for improved deployment efficiency"
+        "Led a 6-person team as technical lead to deliver a NetBenefits 401(k) optimization MVP within 6 months, projecting a $1.7M AUM increase by designing intricate contribution calculation logic for 50M users.",
+        "Engineered an integration with Gusto and PSW, enabling real-time data synchronization and onboarding 150+ businesses in the first year.",
+        "Maintained the Fidelity Advantage 401(k) onboarding system, sustaining sub 2-day processing for 70+ clients/month through new features, upgrades, and CI/CD pipeline management."
       ],
-      "technologies": ["Java", "Spring Boot", "React", "AWS"]
+      "technologies": ["Java", "Apache Kafka", "Azure"]
+    },
+    {
+      "company": "Fidelity Investments",
+      "role": "Full Stack Engineering Intern",
+      "period": "Feb 2023 – Jul 2023",
+      "highlights": [
+        "Reduced debugging steps by 16% by developing a real-time Health Monitoring dashboard centralizing critical application and connection data for 29 services across 13 squads.",
+        "Developed an agile KPI dashboard automating critical data retrieval, saving ~3 hours/week for engineers and providing VPs direct access to real-time performance insights."
+      ],
+      "technologies": ["Java", "Angular", "OracleDB"]
     },
     {
       "company": "Tune AI",
       "role": "Software Developer",
       "period": "Jun 2022 – Jan 2023",
       "highlights": [
-        "Built real-time logging & monitoring app handling 227 requests/sec",
-        "Optimized Kubernetes deployments for better resource utilization",
-        "Implemented DB migration resulting in 1.45x faster response times"
+        "Built a dashboard to visualize operational data and identify performance bottlenecks with a real-time logging & monitoring application handling 227 requests/sec using gRPC and MongoDB.",
+        "Streamlined deployment and reduced setup time by 17% with multi-container Kubernetes configurations.",
+        "Migrated core project database from MongoDB to InfluxDB, improving response times by 1.45x."
       ],
-      "technologies": ["Python", "FastAPI", "MongoDB", "Kubernetes"]
+      "technologies": [
+        "Python",
+        "Next.js",
+        "MongoDB",
+        "Kubernetes",
+        "InfluxDB",
+        "gRPC"
+      ]
     },
     {
       "company": "Frappe Technologies",
       "role": "Software Developer",
       "period": "Jul 2021 – Apr 2022",
       "highlights": [
-        "Developed a flexible Query Builder system",
-        "Created schema migration system for database updates",
-        "Implemented productivity improvements across the platform"
+        "Improved developer productivity by 15% by implementing a Query Builder for the Frappe framework using Pypika.",
+        "Eliminated schema conflict issues and accelerated upgrades by 13% by creating a hash-based schema migration system."
       ],
-      "technologies": ["Python", "JavaScript", "PostgreSQL", "Redis"]
+      "technologies": ["Python", "MariaDB", "Docker", "Pypika"]
     }
   ]
 }
