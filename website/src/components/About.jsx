@@ -43,7 +43,18 @@ const About = () => {
     repeatType: "mirror",
   });
   const btnClassName =
-    "flex items-center rounded-full px-4 py-2 text-xs leading-4 sm:text-sm sm:leading-5 hover:scale-110 ";
+    "flex items-center rounded-full px-4 py-2 text-xs leading-4 sm:text-sm sm:leading-5";
+
+  const emailBtn = {
+    hidden: { scale: 0.95, y: 20 },
+    visible: { scale: 1, y: 0 },
+    hover: { scale: 1.2 },
+  };
+  const emailBtnIcon = {
+    hidden: {},
+    visible: {},
+    hover: { y: -5, x: -4, rotate: -20 },
+  };
   return (
     <motion.section
       initial={{ y: 20, opacity: 0 }}
@@ -59,19 +70,26 @@ const About = () => {
       >
         Abhishek Saxena
       </motion.h1>
-      <p className="text-lg sm:text-xl sm:leading-7 leading-7 font-body pb-4">
-        Hi, I'm a Software Engineer
+      <p className="text-lg sm:text-xl sm:leading-7 leading-6 pb-4 tracking-[0.1px] sm:tracking-normal text-center">
+        👋 Hi, I'm a Software Engineer
       </p>
       <div className="flex items-center justify-around space-x-5">
-        <a
+        <motion.a
+          layout
+          initial="hidden"
+          animate="visible"
+          whileHover="hover"
+          variants={emailBtn}
           href="mailto:abhishekkumar.saxena@gwu.edu"
           target="_blank"
           rel="noopener noreferrer"
           className={"bg-teal-400 text-black " + btnClassName}
         >
-          <FiMail className="mr-2" />
+          <motion.span variants={emailBtnIcon}>
+            <FiMail className="mr-2" />
+          </motion.span>
           Email
-        </a>
+        </motion.a>
         <a
           href="https://linkedin.com/in/saxenabhishek"
           target="_blank"
