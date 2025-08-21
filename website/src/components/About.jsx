@@ -26,15 +26,16 @@ const About = () => {
   radial-gradient(circle at 50% 100%, oklch(80.5% 0.12 ${diColor}/80%) 10%, transparent 60%),
   linear-gradient(${gradRotation}deg, oklch(92% 0.065 ${color}/80%), oklch(75% ${chroma} ${color}/80%), oklch(100.0% 0 0/70%))
   `;
+  const floatingOrbColor = useMotionTemplate`oklch(75% ${chroma} ${color}/30%)`;
   animate(chroma, [0.1, 0.2], {
     repeat: Infinity,
     repeatType: "mirror",
-    duration: 2,
+    duration: 1,
   });
   animate(gradRotation, [10, 180], {
     repeat: Infinity,
     repeatType: "mirror",
-    duration: 4,
+    duration: 2,
     type: "tween",
   });
   animate(color, [120, 245], {
@@ -60,8 +61,12 @@ const About = () => {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="h-full flex flex-col justify-center items-center"
+      className="h-full flex flex-col justify-center items-center relative bg-blend-soft-light"
     >
+      <motion.div
+        style={{ backgroundColor: floatingOrbColor }}
+        className="absolute h-1/5 w-4/5 -z-10 rounded-full bottom-35 blur-3xl"
+      ></motion.div>
       <motion.h1
         style={{
           backgroundImage: background,
