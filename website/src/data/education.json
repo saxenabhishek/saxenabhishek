@@ -2,15 +2,18 @@
   "education": [
     {
       "institution": "George Washington University",
-      "degree": "M.S. Computer Engineering, Minor in Machine Learning",
-      "period": "Jan 2025 - May 2026",
-      "summary": "Focused on scalable systems and machine learning"
+      "degree": "Master of Science in Computer Engineering",
+      "minor": "Machine Learning",
+      "period": "Jan 2025 - Expected May 2026",
+      "location": "Washington, DC",
+      "gpa": "3.7/4"
     },
     {
       "institution": "SRM Institute of Science and Technology",
-      "degree": "B.Tech. Computer Science, Minor in Big Data Analytics ",
-      "period": "June 2019 - May 2023",
-      "summary": "Focused on scalable systems and machine learning"
+      "degree": "Bachelor of Technology in Computer Science",
+      "minor": "Big Data Analytics",
+      "period": "Jun 2019 - May 2023",
+      "location": "Chennai, IN"
     }
   ]
 }

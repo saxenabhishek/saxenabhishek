@@ -4,7 +4,7 @@
   "description": "A portfolio website with a bento box layout that prioritizes information and is mobile-friendly.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build-dev": "vite build --base /website/dist",
     "build-prod": "vite build --base /saxenabhishek --outDir ./../../docs --emptyOutDir",
     "preview": "vite preview",

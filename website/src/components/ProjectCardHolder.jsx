@@ -3,9 +3,7 @@ import { motion } from "motion/react";
 import ExpandShrinkBtn from "./ExpandShrinkButton";
 
 const ProjectCardHolder = ({ projectData, expanded, onFilterChange, mode }) => {
-  const len = projectData.projects.length;
   let proj = projectData.projects;
-
   return (
     <motion.section
       layout="position"
@@ -23,11 +21,12 @@ const ProjectCardHolder = ({ projectData, expanded, onFilterChange, mode }) => {
       {proj.map((pr, idx) => {
         return (
           <motion.article
-            layout
+            layout="preserve-aspect"
+            style={{ borderRadius: 12 }}
             key={`exp-${idx}`}
-            className="rounded-xl border-black/50 dark:border-white/20 border p-3 flex gap-2 flex-col justify-center lg:flex-row min-h-48 relative"
+            className="border-black/50 dark:border-white/20 border p-3 flex flex-col gap-2 justify-evenly lg:flex-row relative"
           >
-            <ProjectCard project={pr} expanded={expanded} />
+            <ProjectCard project={pr} expanded={expanded} idx={`exp-${idx}`} />
           </motion.article>
         );
       })}

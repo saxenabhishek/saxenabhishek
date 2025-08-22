@@ -2,25 +2,25 @@
   "projects": [
     {
       "name": "Progressive GAN",
-      "description": "PyTorch implementation of Nvidia's ProGAN with simplified training API",
-      "highlights": [
-        "Implemented progressive growing architecture",
-        "Trained on Fashion-MNIST & CIFAR-10 datasets",
-        "Achieved stable training and high-quality image generation"
+      "summary": "PyTorch implementation of Progressive GANs for stable, high-quality image synthesis.",
+      "technologies": ["Python", "PyTorch"],
+      "description": [
+        "Implemented Nvidia’s 'Progressive Growing of GANs' in PyTorch, achieving high training stability on Fashion-MNIST and CIFAR-10.",
+        "Published a Pythonic package for ProGAN, simplifying workflows to ~3 lines of code for rapid experimentation."
       ],
-      "technologies": ["PyTorch", "Python", "CUDA"],
-      "githubLink": "https://github.com/saxenabhishek/progressive-gan"
+      "links": ["https://github.com/saxenabhishek/ProGan"],
+      "image_url": "/proj-1-photo.png"
     },
     {
       "name": "Palette Net",
-      "description": "Autoencoder-based deep learning model for artistic image recoloring",
-      "highlights": [
-        "Built custom dataset of 40k images",
-        "Developed novel architecture for style transfer",
-        "Implemented real-time inference pipeline"
+      "summary": "Autoencoder-based image recoloring system that applies custom color palettes to generate diverse, stylized outputs.",
+      "technologies": ["Python", "PyTorch", "AWS"],
+      "description": [
+        "Built an Autoencoder-based deep learning model to recolor images using custom palettes, generating diverse high-quality variations.",
+        "Curated and pre-processed a 40,000-image dataset with augmentation to overcome public data scarcity."
       ],
-      "technologies": ["TensorFlow", "Python", "OpenCV"],
-      "githubLink": "https://github.com/saxenabhishek/palette-net"
+      "links": ["https://github.com/saxenabhishek/PaletteNet-Implementation"],
+      "image_url": "/proj-2-photo.png"
     }
   ]
 }

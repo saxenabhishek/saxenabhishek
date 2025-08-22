@@ -3,8 +3,7 @@ import { FiHexagon, FiHome } from "react-icons/fi";
 const menu = [
   { label: "Projects", value: "projects" },
   { label: "Experience", value: "experience" },
-  { label: "Skills", value: "skills" },
-  { label: "Contact", value: "contact" },
+  { label: "Education", value: "education" },
 ];
 
 const Header = ({ activeFilter, onFilterChange }) => (

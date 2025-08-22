@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
-const ExperienceCard = ({ experience, expanded }) => (
+const ExperienceCard = ({ experience, expanded, idx }) => (
   <>
     <h3 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
       {experience.company}
@@ -14,7 +14,7 @@ const ExperienceCard = ({ experience, expanded }) => (
     {expanded && (
       <motion.ul
         initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 100 }}
+        animate={{ y: 0, opacity: 1 }}
         className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-2"
       >
         {experience.highlights.map((resumeItem) => {
@@ -24,9 +24,9 @@ const ExperienceCard = ({ experience, expanded }) => (
     )}
 
     <motion.div className="flex flex-wrap gap-2 mt-auto pb-4">
-      {experience.technologies.map((tech, idx) => (
+      {experience.technologies.map((tech, index) => (
         <motion.span
-          layoutId={`${experience.company}-${idx}`}
+          layoutId={`${idx}-${experience.company}-${index}`}
           key={tech}
           className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider"
         >

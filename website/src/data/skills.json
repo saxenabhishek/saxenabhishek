@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Languages",
+    "skills": ["Python", "Java", "TypeScript", "JavaScript"]
+  },
+  {
+    "title": "Frontend Frameworks",
+    "skills": ["React", "Next.js"]
+  },
+  {
+    "title": "Backend Frameworks",
+    "skills": ["Spring Boot", "FastAPI"]
+  },
+  {
+    "title": "ML & Data Frameworks",
+    "skills": ["PyTorch"]
+  },
+  {
+    "title": "APIs & RPC",
+    "skills": ["gRPC"]
+  },
+  {
+    "title": "Databases",
+    "skills": ["OracleDB", "MongoDB", "InfluxDB"]
+  },
+  {
+    "title": "Messaging & Streaming",
+    "skills": ["Apache Kafka"]
+  },
+  {
+    "title": "Cloud Platforms",
+    "skills": ["AWS", "Azure"]
+  },
+  {
+    "title": "Containers & Orchestration",
+    "skills": ["Docker", "Kubernetes"]
+  },
+  {
+    "title": "CI/CD",
+    "skills": ["Jenkins"]
+  },
+  {
+    "title": "Testing",
+    "skills": ["pytest", "Jest", "Playwright"]
+  }
+]
