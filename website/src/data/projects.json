@@ -9,7 +9,7 @@
         "Published a Pythonic package for ProGAN, simplifying workflows to ~3 lines of code for rapid experimentation."
       ],
       "links": ["https://github.com/saxenabhishek/ProGan"],
-      "image_url": "/proj-1-photo.png"
+      "image_url": "proj-1-photo.png"
     },
     {
       "name": "Palette Net",
@@ -20,7 +20,7 @@
         "Curated and pre-processed a 40,000-image dataset with augmentation to overcome public data scarcity."
       ],
       "links": ["https://github.com/saxenabhishek/PaletteNet-Implementation"],
-      "image_url": "/proj-2-photo.png"
+      "image_url": "proj-2-photo.png"
     }
   ]
 }
