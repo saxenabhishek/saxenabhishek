@@ -21,7 +21,7 @@ const ProjectCardHolder = ({ projectData, expanded, onFilterChange, mode }) => {
       {proj.map((pr, idx) => {
         return (
           <motion.article
-            layout="position"
+            layout="preserve-aspect"
             style={{ borderRadius: 12 }}
             key={`exp-${idx}`}
             className="border-black/50 dark:border-white/20 border p-3 flex flex-col gap-2 justify-evenly lg:flex-row relative"

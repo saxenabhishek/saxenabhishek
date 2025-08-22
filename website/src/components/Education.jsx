@@ -5,7 +5,7 @@ const Education = ({ expanded, onFilterChange, mode }) => (
   <div className="relative">
     <ExpandShrinkBtn
       onFilterChange={onFilterChange}
-      value={"experience"}
+      value={"education"}
       expanded={expanded}
       mode={mode}
     />

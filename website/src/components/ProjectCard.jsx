@@ -3,29 +3,36 @@ import { FaGithubAlt } from "react-icons/fa";
 
 const ProjectCard = ({ project, expanded, idx }) => (
   <>
-    <img
+    {/* Project Image */}
+    <motion.img
+      layout="preserve-aspect"
       src={project.image_url}
       style={{ borderRadius: 14 }}
       alt="Project Photo"
       className="object-cover sm:w-1/3 w-auto h-16 sm:h-auto max-w-42 border border-neutral-400 bg-neutral-500 m-1"
     />
 
+    {/* GithubLink */}
     {project.links && (
-      <a
+      <motion.a
+        layout="position"
         href={project.links[0]}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto underline absolute text-xs top-3 right-3"
       >
         <FaGithubAlt className="w-5 h-5 hover:fill-teal-400 hover:scale-110" />
-      </a>
+      </motion.a>
     )}
 
-    <motion.div layout="position" className="sm:w-2/3 w-full">
+    <motion.div layout className="sm:w-2/3 w-full">
       <span className="flex justify-between">
-        <h3 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
+        <motion.h3
+          layout="position"
+          className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1"
+        >
           {project.name}
-        </h3>
+        </motion.h3>
       </span>
       <p className="text-xs md:text-sm leading-3 md:leading-5 text-neutral-600 dark:text-neutral-400 pb-1">
         {project.summary}
