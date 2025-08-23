@@ -21,6 +21,39 @@
       ],
       "links": ["https://github.com/saxenabhishek/PaletteNet-Implementation"],
       "image_url": "/proj-2-photo.png"
+    },
+    {
+      "name": "GitHub SRM",
+      "summary": "Institute-wide portal of three Next.js apps automating project initiation, collaboration, and repo bootstrapping with CI/CD.",
+      "technologies": ["Python", "Django", "Next.js", "TailwindCSS"],
+      "description": [
+        "Developed a web portal with three Next.js applications to streamline project initiation and foster collaboration within the institute.",
+        "Automated the project lifecycle from idea submission to team formation and repository setup, including pre-configured repos with standards and CI/CD pipelines."
+      ],
+      "links": ["https://github.com/SRM-IST-KTR/githubsrm"],
+      "image_url": "proj-3-photo.png"
+    },
+    {
+      "name": "Expense Dashboard",
+      "summary": "Backend + dashboard that ingests statements and vendor data to auto-categorize expenses with faster queries.",
+      "technologies": ["Python", "Jinja", "TailwindCSS", "MongoDB"],
+      "description": [
+        "Automated ~90% of personal expense tracking across banks and vendors by parsing statements, scraping vendor data, and fuzzy matching to transactions.",
+        "Improved query performance by 2x and resolved data consistency issues by moving from SQLite to a MongoDB schema optimized for transactional data."
+      ],
+      "links": ["https://github.com/saxenabhishek/financials"],
+      "image_url": "placeholder.svg"
+    },
+    {
+      "name": "Maze Solver",
+      "summary": "C++ maze generator and optimal path visualizer using DFS and Dijkstra, running in real time.",
+      "technologies": ["C++", "Linux"],
+      "description": [
+        "Implemented a DFS-based maze generation algorithm producing solvable mazes across 50+ randomized layouts.",
+        "Built a shortest-path solver with Dijkstra’s algorithm, enabling real-time optimal path visualization in ~10ms."
+      ],
+      "links": ["https://github.com/saxenabhishek/Maze-game"],
+      "image_url": "placeholder.svg"
     }
   ]
 }
