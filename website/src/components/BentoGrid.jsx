@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
 import About from "./About.jsx";
-import Skills from "./Skills.jsx";
+import Skills from "./leafComponents/Skills.jsx";
 import Education from "./Education.jsx";
 import Contact from "./Contact.jsx";
 import Header from "./Header.jsx";
-import SummaryCard from "./SummaryCard.jsx";
+import SummaryCard from "./leafComponents/SummaryCard.jsx";
 import ProfileCard from "./ProfileCard.jsx";
 import ModeToggleCard from "./ModeToggleCard.jsx";
 import ExperienceCardHolder from "./ExperienceCardHolder.jsx";
@@ -16,7 +16,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
     component: <Header activeFilter={filter} onFilterChange={onFilterChange} />,
     tags: ["header"],
     className:
-      "col-span-1 md:col-span-3 lg:col-span-5 sticky top-2 z-10 scale-101 shadow-sm bg-blend-hue",
+      "col-span-1 md:col-span-3 lg:col-span-5 sticky top-2 z-10 scale-101 shadow-sm bg-blend-hue  backdrop-blur-md",
   };
 
   const cards = [
@@ -24,13 +24,13 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       id: "about",
       component: <About />,
       tags: ["intro"],
-      className: "md:col-span-2 lg:row-span-2",
+      className: "md:col-span-2 lg:row-span-2  backdrop-blur-3xl",
     },
     {
       id: "profile",
       component: <ProfileCard />,
       tags: ["intro"],
-      className: "p-[0px] lg:row-span-2",
+      className: "p-[0px] lg:row-span-2 relative",
     },
     {
       id: "mode",
@@ -111,7 +111,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
             key={card.id}
             className={`${
               card.className || ""
-            } p-4 justify-center dark:border-white/50 border-black/50 border backdrop-blur-md overflow-clip ${
+            } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
               filter && !isActive ? "opacity-20" : ""
             } ${
               filter && card.tags.includes(filter)

@@ -6,6 +6,7 @@ import {
   useTransform,
 } from "motion/react";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import AbstractBlob from "./leafComponents/abstractBlob";
 
 const About = () => {
   const links = [
@@ -64,9 +65,11 @@ const About = () => {
       className="h-full flex flex-col justify-center items-center relative bg-blend-soft-light"
     >
       <motion.div
-        style={{ backgroundColor: floatingOrbColor }}
-        className="absolute h-1/5 w-4/5 -z-10 rounded-full bottom-35 blur-2xl"
-      ></motion.div>
+        style={{ fill: floatingOrbColor }}
+        className="absolute h-2/4 w-3/4 -z-10 rotate-30 top-5 blur-2xl"
+      >
+        <AbstractBlob />
+      </motion.div>
       <motion.h1
         style={{
           backgroundImage: background,
