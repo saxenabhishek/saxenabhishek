@@ -1,8 +1,9 @@
+import { motion } from "motion/react";
 import educationData from "../data/education.json";
 import ExpandShrinkBtn from "./ExpandShrinkButton";
 
 const Education = ({ expanded, onFilterChange, mode }) => (
-  <div className="relative">
+  <motion.div layout="position" className="relative">
     <ExpandShrinkBtn
       onFilterChange={onFilterChange}
       value={"education"}
@@ -25,7 +26,7 @@ const Education = ({ expanded, onFilterChange, mode }) => (
         </p>
       </div>
     ))}
-  </div>
+  </motion.div>
 );
 
 export default Education;

@@ -1,22 +1,29 @@
 import { motion } from "motion/react";
 import { FaGithubAlt } from "react-icons/fa";
 
-const ProjectCard = ({ project, expanded, idx }) => (
+const ProjectCard = ({ project, expanded, idx, githubLink }) => (
   <>
     {/* Project Image */}
-    <motion.img
+    <motion.a
       layout="preserve-aspect"
-      src={project.image_url}
-      style={{ borderRadius: 14 }}
-      alt="Project Photo"
-      className="object-cover sm:w-1/3 w-auto h-16 sm:h-auto max-w-42 border border-neutral-400 bg-neutral-500 m-1"
-    />
+      href={githubLink || ""}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="sm:w-1/3 w-auto h-16 sm:h-auto max-w-42 m-1 overflow-clip relative"
+    >
+      <img
+        src={project.image_url}
+        style={{ borderRadius: 14 }}
+        alt={`Project Photo ${project.name}`}
+        className=" border h-full w-full object-cover border-neutral-400 bg-neutral-500"
+      />
+    </motion.a>
 
     {/* GithubLink */}
-    {project.links && (
+    {githubLink && (
       <motion.a
         layout="position"
-        href={project.links[0]}
+        href={githubLink}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto underline absolute text-xs top-3 right-3"
