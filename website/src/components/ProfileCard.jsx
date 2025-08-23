@@ -4,7 +4,7 @@ const ProfileCard = () => (
   <img
     src={imgurl}
     alt="Profile picture"
-    className="rounded-lg object-cover bg-blue-50 h-full dark:bg-green-50 transition-colors"
+    className="rounded-lg object-cover bg-blue-50 dark:bg-green-50 transition-colors"
   />
 );
 

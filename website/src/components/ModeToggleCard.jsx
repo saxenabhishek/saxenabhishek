@@ -17,6 +17,7 @@ const ModeToggleCard = ({ mode, toggleMode }) => {
       onClick={toggleMode}
       variants={btn}
       initial="hidden"
+      animate="visible"
       whileInView="visible"
       whileHover="hover"
       aria-label="Toggle color mode"
@@ -31,12 +32,14 @@ const ModeToggleCard = ({ mode, toggleMode }) => {
         <motion.span
           layout
           variants={icon}
+          initial="hidden"
+          animate="visible"
           transition={{
             type: "spring",
             visualDuration: 0.2,
             bounce: 0.2,
           }}
-          className={` w-4 h-4`}
+          className={`w-4 h-4`}
         >
           {mode === "light" ? <FiSun /> : <FiMoon />}
         </motion.span>
