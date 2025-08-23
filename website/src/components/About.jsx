@@ -74,7 +74,7 @@ const About = () => {
         style={{
           backgroundImage: background,
         }}
-        className="bg-clip-text w-min bg-blend-soft-light bg-neutral-900 text-transparent text-4xl leading-[44px]  sm:text-[57px] sm:leading-[64px] font-heading capitalize text-center pb-4"
+        className="bg-clip-text w-min bg-blend-hard-light bg-neutral-900 text-transparent text-4xl leading-[44px]  sm:text-[57px] sm:leading-[64px] font-heading capitalize text-center pb-4"
       >
         Abhishek Saxena
       </motion.h1>
