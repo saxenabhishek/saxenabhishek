@@ -5,6 +5,7 @@ import { useEffect, useCallback } from "react";
 
 const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
   const initialColor = useMotionValue("100% 0 0");
+  const scale = useMotionValue("1");
   const color = useMotionTemplate`oklch(${initialColor})`;
 
   const setColor = useCallback(() => {
@@ -24,19 +25,21 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       behavior: "smooth",
     });
     setColor();
-  };
-  const expand_icon = {
-    initial: { scale: 1 },
-    whileHover: { scale: 1.3 },
+    scale.set(1);
   };
   return (
     <motion.span
       layout
-      style={{ color }}
-      variants={expand_icon}
+      style={{ color, scale }}
       whileHover="whileHover"
-      onHoverStart={() => initialColor.set("77.7% 0.152 181.912")}
-      onHoverEnd={setColor}
+      onHoverStart={() => {
+        initialColor.set("77.7% 0.152 181.912");
+        scale.set(1.3);
+      }}
+      onHoverEnd={() => {
+        setColor();
+        scale.set(1);
+      }}
       className="absolute top-0 right-0 p-1 "
       onClick={handleClick}
     >
