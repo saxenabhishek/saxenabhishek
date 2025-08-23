@@ -1,6 +1,6 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./leafComponents/ProjectCard";
 import { motion, stagger, AnimatePresence } from "motion/react";
-import ExpandShrinkBtn from "./ExpandShrinkButton";
+import ExpandShrinkBtn from "./leafComponents/ExpandShrinkButton";
 import projectData from "../data/projects.json";
 
 const ProjectCardHolder = ({ expanded, onFilterChange, mode }) => {

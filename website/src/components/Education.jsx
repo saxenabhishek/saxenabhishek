@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import educationData from "../data/education.json";
-import ExpandShrinkBtn from "./ExpandShrinkButton";
+import ExpandShrinkBtn from "./leafComponents/ExpandShrinkButton";
 
 const Education = ({ expanded, onFilterChange, mode }) => (
   <motion.div layout="position" className="relative">

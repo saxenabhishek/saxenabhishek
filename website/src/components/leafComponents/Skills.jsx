@@ -1,4 +1,4 @@
-import skillsData from "./../data/skills.json";
+import skillsData from "../../data/skills.json";
 
 const hueClasses = [
   "inset-ring-teal-500/20",

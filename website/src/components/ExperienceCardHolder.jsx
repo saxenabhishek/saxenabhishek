@@ -1,5 +1,5 @@
-import ExpandShrinkBtn from "./ExpandShrinkButton";
-import ExperienceCard from "./ExperienceCard";
+import ExpandShrinkBtn from "./leafComponents/ExpandShrinkButton";
+import ExperienceCard from "./leafComponents/ExperienceCard";
 import { motion } from "motion/react";
 import experienceData from "../data/experience.json";
 

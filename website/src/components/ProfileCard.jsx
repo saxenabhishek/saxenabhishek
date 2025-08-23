@@ -1,9 +1,9 @@
-import imgurl from "./../../images/profile-edited.png";
+import imgurl from "../../images/profile-edited.png";
 
 const ProfileCard = () => (
   <img
     src={imgurl}
-    alt="Profile"
+    alt="Profile picture"
     className="rounded-lg object-cover bg-blue-50 h-full dark:bg-green-50 transition-colors"
   />
 );
