@@ -26,7 +26,7 @@ const About = () => {
   radial-gradient(circle at 50% 100%, oklch(80.5% 0.12 ${diColor}/80%) 10%, transparent 60%),
   linear-gradient(${gradRotation}deg, oklch(92% 0.065 ${color}/80%), oklch(75% ${chroma} ${color}/80%), oklch(100.0% 0 0/70%))
   `;
-  const floatingOrbColor = useMotionTemplate`oklch(75% ${chroma} ${color}/30%)`;
+  const floatingOrbColor = useMotionTemplate`oklch(75% ${chroma} ${color}/20%)`;
   animate(chroma, [0.1, 0.2], {
     repeat: Infinity,
     repeatType: "mirror",
@@ -65,7 +65,7 @@ const About = () => {
     >
       <motion.div
         style={{ backgroundColor: floatingOrbColor }}
-        className="absolute h-1/5 w-4/5 -z-10 rounded-full bottom-35 blur-3xl"
+        className="absolute h-1/5 w-4/5 -z-10 rounded-full bottom-35 blur-2xl"
       ></motion.div>
       <motion.h1
         style={{

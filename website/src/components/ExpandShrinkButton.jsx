@@ -5,6 +5,8 @@ import { useEffect, useCallback } from "react";
 
 const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
   const initialColor = useMotionValue("100% 0 0");
+  const color = useMotionTemplate`oklch(${initialColor})`;
+
   const setColor = useCallback(() => {
     if (mode === "dark") {
       initialColor.set("100% 0 0");
@@ -13,7 +15,7 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
     }
   }, [mode, initialColor]);
   useEffect(() => setColor(), [setColor]);
-  const color = useMotionTemplate`oklch(${initialColor})`;
+
   const handleClick = () => {
     expanded ? onFilterChange(null) : onFilterChange(value);
     window.scrollTo({
@@ -23,20 +25,25 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
     });
     setColor();
   };
+  const expand_icon = {
+    initial: { scale: 1 },
+    whileHover: { scale: 1.3 },
+  };
   return (
     <motion.span
       layout
       style={{ color }}
-      whileHover={{ scale: 1.3 }}
+      variants={expand_icon}
+      whileHover="whileHover"
       onHoverStart={() => initialColor.set("77.7% 0.152 181.912")}
       onHoverEnd={setColor}
-      className="absolute top-0 right-0 p-1"
+      className="absolute top-0 right-0 p-1 "
       onClick={handleClick}
     >
       {expanded ? (
-        <RiFullscreenExitLine className="w-6 h-6" />
+        <RiFullscreenExitLine className="w-5 h-5 sm:w-6 sm:h-6" />
       ) : (
-        <RiExpandDiagonalSLine className="w-6 h-6" />
+        <RiExpandDiagonalSLine className="w-5 h-5 sm:w-6 sm:h-6" />
       )}
     </motion.span>
   );

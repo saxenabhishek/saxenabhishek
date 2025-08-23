@@ -1,13 +1,9 @@
 import ExpandShrinkBtn from "./ExpandShrinkButton";
 import ExperienceCard from "./ExperienceCard";
 import { motion } from "motion/react";
+import experienceData from "../data/experience.json";
 
-const ExperienceCardHolder = ({
-  experienceData,
-  expanded,
-  onFilterChange,
-  mode,
-}) => {
+const ExperienceCardHolder = ({ expanded, onFilterChange, mode }) => {
   const exp = experienceData.experiences;
 
   return (
