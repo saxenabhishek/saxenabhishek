@@ -3,8 +3,9 @@ import BentoGrid from "./components/BentoGrid.jsx";
 import "./main.css";
 
 const App = () => {
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
   const [filter, setFilter] = useState(null);
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState(mql.matches ? "dark" : "light");
   const toggleMode = () => setMode(mode === "dark" ? "light" : "dark");
 
   return (
