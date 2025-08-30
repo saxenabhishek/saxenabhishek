@@ -1,6 +1,11 @@
 import { RiExpandDiagonalSLine } from "react-icons/ri";
 import { RiFullscreenExitLine } from "react-icons/ri";
-import { motion, useMotionTemplate, useMotionValue } from "motion/react";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+} from "motion/react";
 import { useEffect, useCallback } from "react";
 
 const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
@@ -15,6 +20,7 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       initialColor.set("0% 0 0");
     }
   }, [mode, initialColor]);
+  setColor();
   useEffect(() => setColor(), [setColor]);
 
   const handleClick = () => {
@@ -25,7 +31,7 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       behavior: "smooth",
     });
     setColor();
-    scale.set(1);
+    animate(scale, 1, { visualDuration: 0.5 });
   };
   return (
     <motion.span
@@ -34,11 +40,11 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       whileHover="whileHover"
       onHoverStart={() => {
         initialColor.set("77.7% 0.152 181.912");
-        scale.set(1.3);
+        animate(scale, 1.3, { visualDuration: 0.5 });
       }}
       onHoverEnd={() => {
         setColor();
-        scale.set(1);
+        animate(scale, 1, { visualDuration: 0.5 });
       }}
       className="absolute top-0 right-0 p-1 "
       onClick={handleClick}
