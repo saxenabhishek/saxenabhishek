@@ -96,18 +96,19 @@ const About = () => {
           <motion.span variants={emailBtnIcon}>
             <FiMail className="mr-2" />
           </motion.span>
-          Email
+          Email Me
         </motion.a>
         <a
           href="https://linkedin.com/in/saxenabhishek"
           target="_blank"
           rel="noopener noreferrer"
           className={
-            "border dark:border-white/50 border-black/50 " + btnClassName
+            "ring dark:ring-white/50 ring-black/50  hover:ring-2 " +
+            btnClassName
           }
         >
-          <FiLinkedin className="mr-2 text-xs" />
-          LinkedIn
+          <FiLinkedin className="mr-2 sm:text-sm text-xs" />
+          Let's Connect
         </a>
       </div>
     </motion.section>

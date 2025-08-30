@@ -21,9 +21,24 @@ const Education = ({ expanded, onFilterChange, mode }) => (
         <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
           {edu.degree}
         </p>
-        <p className="text-xs md:text-sm leading-5 pb-4 text-neutral-600 dark:text-neutral-400">
-          {edu.period}
-        </p>
+        <div className="text-xs md:text-sm leading-5 pb-2 text-neutral-600 dark:text-neutral-400">
+          <p>{edu.period}</p>
+          <p>{edu.location}</p>
+        </div>
+
+        {expanded && (
+          <motion.div
+            key={edu.institution}
+            exit={{ y: 40, opacity: 0 }}
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            layout="scale"
+            className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] pb-1"
+          >
+            <p>Minor in {edu.minor}</p>
+            {edu.gpa && <p>GPA {edu.gpa}</p>}
+          </motion.div>
+        )}
       </div>
     ))}
   </motion.div>
