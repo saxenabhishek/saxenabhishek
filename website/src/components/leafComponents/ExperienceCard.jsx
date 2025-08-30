@@ -8,14 +8,14 @@ const ExperienceCard = ({ experience, expanded, idx }) => (
     <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
       {experience.role}
     </p>
-    <p className="text-xs md:text-sm leading-5 pb-4 text-neutral-600 dark:text-neutral-400">
+    <p className="text-xs md:text-sm leading-5 pb-2 text-neutral-600 dark:text-neutral-400">
       {experience.period}
     </p>
     {expanded && (
       <motion.ul
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-2"
+        className="text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] list-disc pl-4 pb-1"
       >
         {experience.highlights.map((resumeItem) => {
           return <li key={resumeItem}>{resumeItem}</li>;
@@ -28,7 +28,7 @@ const ExperienceCard = ({ experience, expanded, idx }) => (
         <motion.span
           layoutId={`${idx}-${experience.company}-${index}`}
           key={tech}
-          className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider"
+          className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light"
         >
           {tech}
         </motion.span>
