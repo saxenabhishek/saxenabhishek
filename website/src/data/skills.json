@@ -1,46 +1,27 @@
 [
   {
     "title": "Languages",
-    "skills": ["Python", "Java", "TypeScript", "JavaScript"]
+    "skills": ["Python", "Java", "TypeScript", "C++"]
   },
   {
-    "title": "Frontend Frameworks",
-    "skills": ["React", "Next.js"]
+    "title": "Frontend",
+    "skills": ["React", "Next.js", "Angular", "Cypress", "Jasmine"]
   },
   {
-    "title": "Backend Frameworks",
-    "skills": ["Spring Boot", "FastAPI"]
+    "title": "Data & ML",
+    "skills": ["OracleDB", "MongoDB", "InfluxDB", "Apache Kafka"]
+  },
+
+  {
+    "title": "Backend & APIs",
+    "skills": ["Spring Boot", "FastAPI", "gRPC", "Django", "Docker"]
   },
   {
-    "title": "ML & Data Frameworks",
-    "skills": ["PyTorch"]
+    "title": "Cloud & Platform",
+    "skills": ["AWS", "Azure", "GCP", "Adeptia"]
   },
   {
-    "title": "APIs & RPC",
-    "skills": ["gRPC"]
-  },
-  {
-    "title": "Databases",
-    "skills": ["OracleDB", "MongoDB", "InfluxDB"]
-  },
-  {
-    "title": "Messaging & Streaming",
-    "skills": ["Apache Kafka"]
-  },
-  {
-    "title": "Cloud Platforms",
-    "skills": ["AWS", "Azure"]
-  },
-  {
-    "title": "Containers & Orchestration",
-    "skills": ["Docker", "Kubernetes"]
-  },
-  {
-    "title": "CI/CD",
-    "skills": ["Jenkins"]
-  },
-  {
-    "title": "Testing",
-    "skills": ["pytest", "Jest", "Playwright"]
+    "title": "Machine Learning",
+    "skills": ["PyTorch", "TensorFlow", "Keras", "OpenCV"]
   }
 ]
