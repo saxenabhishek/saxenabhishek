@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build-dev": "vite build --base /website/dist",
+    "build-dev": "vite build --base /website/dist --emptyOutDir",
     "build-prod": "vite build --base /saxenabhishek --outDir ./../../docs --emptyOutDir",
     "preview": "vite preview",
     "lint": "eslint ."
