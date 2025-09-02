@@ -34,6 +34,8 @@ const ModeToggleCard = ({ mode, toggleMode }) => {
         <motion.span
           layout="position"
           variants={icon}
+          initial="hidden"
+          animate="visible"
           transition={{
             type: "spring",
             visualDuration: 0.2,
