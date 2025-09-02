@@ -1,11 +1,16 @@
 import { RiExpandDiagonalSLine } from "react-icons/ri";
 import { RiFullscreenExitLine } from "react-icons/ri";
-import { motion, useMotionTemplate, useMotionValue } from "motion/react";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+} from "motion/react";
 import { useEffect, useCallback } from "react";
 
 const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
-  const initialColor = useMotionValue("100% 0 0");
-  const scale = useMotionValue("1");
+  const initialColor = useMotionValue(mode == "dark" ? "100% 0 0" : "0% 0 0");
+  const scale = useMotionValue(1);
   const color = useMotionTemplate`oklch(${initialColor})`;
 
   const setColor = useCallback(() => {
@@ -25,20 +30,19 @@ const ExpandShrinkBtn = ({ onFilterChange, value, expanded, mode }) => {
       behavior: "smooth",
     });
     setColor();
-    scale.set(1);
+    animate(scale, 1);
   };
   return (
     <motion.span
       layout
       style={{ color, scale }}
-      whileHover="whileHover"
       onHoverStart={() => {
         initialColor.set("77.7% 0.152 181.912");
-        scale.set(1.3);
+        animate(scale, 1.3);
       }}
       onHoverEnd={() => {
         setColor();
-        scale.set(1);
+        animate(scale, 1);
       }}
       className="absolute top-0 right-0 p-1 "
       onClick={handleClick}

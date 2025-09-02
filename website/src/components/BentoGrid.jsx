@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { LayoutGroup, motion } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./leafComponents/Skills.jsx";
 import Education from "./Education.jsx";
@@ -6,17 +6,23 @@ import Contact from "./Contact.jsx";
 import Header from "./Header.jsx";
 import SummaryCard from "./leafComponents/SummaryCard.jsx";
 import ProfileCard from "./ProfileCard.jsx";
-import ModeToggleCard from "./ModeToggleCard.jsx";
 import ExperienceCardHolder from "./ExperienceCardHolder.jsx";
 import ProjectCardHolder from "./ProjectCardHolder.jsx";
 
 const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
   const headerCard = {
     id: "header",
-    component: <Header activeFilter={filter} onFilterChange={onFilterChange} />,
+    component: (
+      <Header
+        activeFilter={filter}
+        onFilterChange={onFilterChange}
+        mode={mode}
+        toggleMode={toggleMode}
+      />
+    ),
     tags: ["header"],
     className:
-      "col-span-1 md:col-span-3 lg:col-span-5 sticky top-2 z-10 scale-101 shadow-sm bg-blend-hue  backdrop-blur-md",
+      "col-span-1 md:col-span-3 lg:col-span-5 sticky top-2 z-10 shadow-sm bg-blend-hue  backdrop-blur-md py-2",
   };
 
   const cards = [
@@ -24,19 +30,13 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
       id: "about",
       component: <About />,
       tags: ["intro"],
-      className: "md:col-span-2 lg:row-span-2  backdrop-blur-3xl",
+      className: "md:col-span-2   backdrop-blur-3xl",
     },
     {
       id: "profile",
       component: <ProfileCard />,
       tags: ["intro"],
-      className: "p-[0px] lg:row-span-2 relative",
-    },
-    {
-      id: "mode",
-      component: <ModeToggleCard mode={mode} toggleMode={toggleMode} />,
-      tags: ["utility"],
-      className: "lg:col-span-2",
+      className: "p-[0px]  relative",
     },
     {
       id: "skills",
@@ -99,32 +99,38 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
 
   sortedCards.unshift(headerCard);
   return (
-    <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-      {sortedCards.map((card) => {
-        const isActive =
-          !filter || card.tags.includes(filter) || card.tags.includes("header");
-        return (
-          <motion.div
-            layout="scale"
-            style={{ borderRadius: "8px" }}
-            layoutId={card.id}
-            key={card.id}
-            className={`${
-              card.className || ""
-            } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
-              filter && !isActive ? "opacity-20" : ""
-            } ${
-              filter && card.tags.includes(filter)
-                ? "md:col-span-3 lg:col-span-5"
-                : ""
-            }
+    <LayoutGroup>
+      <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+        {sortedCards.map((card) => {
+          const isActive =
+            !filter ||
+            card.tags.includes(filter) ||
+            card.tags.includes("header");
+          return (
+            <motion.div
+              layout="scale"
+              style={{ borderRadius: "8px" }}
+              layoutId={card.id}
+              key={card.id}
+              className={`${
+                card.className || ""
+              } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
+                filter && !isActive
+                  ? "opacity-20 dark:opacity-20"
+                  : "opacity-100"
+              } ${
+                filter && card.tags.includes(filter)
+                  ? "md:col-span-3 lg:col-span-5"
+                  : ""
+              }
             `}
-          >
-            {card.component}
-          </motion.div>
-        );
-      })}
-    </motion.div>
+            >
+              {card.component}
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </LayoutGroup>
   );
 };
 
