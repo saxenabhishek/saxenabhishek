@@ -15,6 +15,8 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
         src={project.image_url}
         style={{ borderRadius: 14 }}
         alt={`Project Photo ${project.name}`}
+        loading="lazy"
+        fetchPriority="low"
         className=" border h-full w-full object-cover border-neutral-400 bg-neutral-500"
       />
     </motion.a>
