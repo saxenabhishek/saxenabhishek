@@ -6,7 +6,15 @@
       "minor": "Machine Intelligence",
       "period": "2025 - 2026",
       "location": "Washington, DC",
-      "gpa": "3.7/4"
+      "gpa": "3.7/4",
+      "courses": [
+        "6015 Stochastic Processes in Engr",
+        "6035 Intro to Computer Networks",
+        "6882 Reinforcement Learning",
+        "6005 Computer Architecture & Design",
+        "6105 Intro High Performance Computing",
+        "6210 Machine Intelligence"
+      ]
     },
     {
       "institution": "SRM Institute of Science and Technology",
