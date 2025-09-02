@@ -9,10 +9,10 @@ const ModeToggleCard = ({ mode, toggleMode }) => {
     tap: { scale: 1.05 },
   };
   const icon = {
-    hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
     hover: { rotate: -90 },
-    tap: { rotate: 0 },
+    tap: { rotate: 0, transition: { visualDuration: 2 } },
   };
   return (
     <motion.button

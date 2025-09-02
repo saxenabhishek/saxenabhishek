@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { LayoutGroup, motion } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./leafComponents/Skills.jsx";
 import Education from "./Education.jsx";
@@ -99,32 +99,38 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
 
   sortedCards.unshift(headerCard);
   return (
-    <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-      {sortedCards.map((card) => {
-        const isActive =
-          !filter || card.tags.includes(filter) || card.tags.includes("header");
-        return (
-          <motion.div
-            layout="scale"
-            style={{ borderRadius: "8px" }}
-            layoutId={card.id}
-            key={card.id}
-            className={`${
-              card.className || ""
-            } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
-              filter && !isActive ? "opacity-20" : ""
-            } ${
-              filter && card.tags.includes(filter)
-                ? "md:col-span-3 lg:col-span-5"
-                : ""
-            }
+    <LayoutGroup>
+      <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+        {sortedCards.map((card) => {
+          const isActive =
+            !filter ||
+            card.tags.includes(filter) ||
+            card.tags.includes("header");
+          return (
+            <motion.div
+              layout="scale"
+              style={{ borderRadius: "8px" }}
+              layoutId={card.id}
+              key={card.id}
+              className={`${
+                card.className || ""
+              } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
+                filter && !isActive
+                  ? "opacity-20 dark:opacity-20"
+                  : "opacity-100"
+              } ${
+                filter && card.tags.includes(filter)
+                  ? "md:col-span-3 lg:col-span-5"
+                  : ""
+              }
             `}
-          >
-            {card.component}
-          </motion.div>
-        );
-      })}
-    </motion.div>
+            >
+              {card.component}
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </LayoutGroup>
   );
 };
 

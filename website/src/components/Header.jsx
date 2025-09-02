@@ -17,7 +17,7 @@ const Header = ({ activeFilter, onFilterChange, mode, toggleMode }) => (
         <button
           key={item.value}
           onClick={() => onFilterChange(item.value)}
-          className={`tracking-wide text-xs leading-5 font-body md:text-sm transition-colors ${
+          className={`tracking-wide text-xs leading-5 md:text-sm transition-colors ${
             activeFilter === item.value
               ? "text-teal-400 underline"
               : "text-black dark:text-white hover:text-teal-400 dark:hover:text-teal-400"

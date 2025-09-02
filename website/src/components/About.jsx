@@ -45,7 +45,7 @@ const About = () => {
     repeatType: "mirror",
   });
   const btnClassName =
-    "flex items-center rounded-full px-4 py-2 text-xs leading-4 sm:text-sm sm:leading-5";
+    "flex items-center rounded-full px-2 py-2 sm:px-4 sm:py-2 text-xs leading-4 sm:text-sm sm:leading-5";
 
   const emailBtn = {
     hidden: { scale: 0.95, y: 20 },
