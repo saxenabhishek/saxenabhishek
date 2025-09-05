@@ -1,11 +1,10 @@
-import { LayoutGroup, motion } from "motion/react";
+import { motion } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./leafComponents/Skills.jsx";
 import Education from "./Education.jsx";
 import Contact from "./Contact.jsx";
 import Header from "./Header.jsx";
 import SummaryCard from "./leafComponents/SummaryCard.jsx";
-import ProfileCard from "./ProfileCard.jsx";
 import ExperienceCardHolder from "./ExperienceCardHolder.jsx";
 import ProjectCardHolder from "./ProjectCardHolder.jsx";
 
