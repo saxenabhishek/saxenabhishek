@@ -78,9 +78,9 @@ const About = () => {
       >
         Abhishek Saxena
       </motion.h1>
-      <p className="text-lg sm:text-xl sm:leading-7 leading-6 pb-4 tracking-[0.1px] sm:tracking-normal text-center">
+      <h2 className="text-lg sm:text-xl sm:leading-7 leading-6 pb-4 tracking-[0.1px] sm:tracking-normal text-center">
         👋 Hi, I'm a Software Engineer
-      </p>
+      </h2>
       <div className="flex items-center justify-around space-x-5">
         <motion.a
           layout

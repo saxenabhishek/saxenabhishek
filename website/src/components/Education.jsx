@@ -10,34 +10,34 @@ const Education = ({ expanded, onFilterChange, mode }) => (
       expanded={expanded}
       mode={mode}
     />
-    <h2 className="text-2xl leading-9 tracking-wide font-heading pb-4">
+    <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4">
       Education
-    </h2>
+    </h1>
     {educationData.education.map((edu) => (
       <div key={edu.institution} className="mb-2">
-        <p className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
+        <h2 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
           {edu.institution}
-        </p>
-        <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
+        </h2>
+        <h3 className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
           {edu.degree}
-        </p>
+        </h3>
 
         {expanded && (
-          <motion.p
+          <motion.h4
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             layout
             className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1"
           >
             Minor in {edu.minor}
-          </motion.p>
+          </motion.h4>
         )}
         <div className="text-xs md:text-sm leading-5 text-neutral-600 dark:text-neutral-400">
-          <p>{edu.period}</p>
-          <p>{edu.location}</p>
+          <h4>{edu.period}</h4>
+          <h4>{edu.location}</h4>
         </div>
         {expanded && (
-          <motion.div
+          <motion.article
             layout="position"
             key={edu.institution}
             exit={{ y: -50, opacity: 0 }}
@@ -47,9 +47,9 @@ const Education = ({ expanded, onFilterChange, mode }) => (
           >
             {edu.courses && (
               <>
-                <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 py-1">
+                <h5 className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 py-1">
                   Courses
-                </p>
+                </h5>
                 <ul className="pl-4 text-gray-800 dark:text-gray-300 text-xs leading-4 md:text-sm md:leading-5 md:tracking-wide tracking-[0.4px] py-2">
                   {edu.courses?.map((cour, idx) => {
                     return (
@@ -61,7 +61,7 @@ const Education = ({ expanded, onFilterChange, mode }) => (
                 </ul>
               </>
             )}
-          </motion.div>
+          </motion.article>
         )}
       </div>
     ))}

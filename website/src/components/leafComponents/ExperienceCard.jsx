@@ -2,15 +2,15 @@ import { motion } from "motion/react";
 
 const ExperienceCard = ({ experience, expanded, idx }) => (
   <>
-    <h3 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
+    <h2 className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1">
       {experience.company}
-    </h3>
-    <p className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
+    </h2>
+    <h3 className="text-sm md:text-base tracking-wide leading-4 md:leading-6 text-neutral-600 dark:text-neutral-400 pb-1">
       {experience.role}
-    </p>
-    <p className="text-xs md:text-sm leading-5 pb-2 text-neutral-600 dark:text-neutral-400">
+    </h3>
+    <h4 className="text-xs md:text-sm leading-5 pb-2 text-neutral-600 dark:text-neutral-400">
       {experience.period}
-    </p>
+    </h4>
     {expanded && (
       <motion.ul
         initial={{ y: -50, opacity: 0 }}

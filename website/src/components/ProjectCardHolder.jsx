@@ -15,6 +15,7 @@ const ProjectCardHolder = ({ expanded, onFilterChange, mode }) => {
       opacity: 1,
       transition: { delayChildren: stagger(0.2, { ease: "easeIn" }) },
     },
+    exit: {},
   };
   const cardChild = {
     hidden: { y: -50, x: 100, opacity: 0 },
@@ -27,6 +28,7 @@ const ProjectCardHolder = ({ expanded, onFilterChange, mode }) => {
       className=" flex flex-col space-y-4 relative"
       initial="hidden"
       animate="visible"
+      exit="hidden"
       variants={container}
     >
       <ExpandShrinkBtn
@@ -49,7 +51,6 @@ const ProjectCardHolder = ({ expanded, onFilterChange, mode }) => {
             layout="preserve-aspect"
             style={{ borderRadius: 12 }}
             variants={cardChild}
-            exit={"exit"}
             key={`exp-${idx}`}
             className="border-black/50 dark:border-white/20 border p-3 flex flex-col gap-2 justify-evenly lg:flex-row relative"
           >
