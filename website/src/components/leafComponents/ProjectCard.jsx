@@ -52,7 +52,7 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
         {project.technologies.slice(0, 2).map((tech) => (
           <span
             key={`${idx}-${tech}`}
-            className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light"
+            className="bg-teal-300/20 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light"
           >
             {tech}
           </span>

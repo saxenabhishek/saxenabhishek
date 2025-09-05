@@ -4,11 +4,11 @@ const Skills = () => {
   const groups = skillsData;
 
   const chip =
-    "bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light";
+    "bg-teal-300/20 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light";
 
   return (
     <>
-      <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4 text-left">
+      <h1 className="text-2xl leading-9 tracking-wide font-heading pb-4">
         Skills
       </h1>
 
