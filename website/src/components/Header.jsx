@@ -8,13 +8,13 @@ const menu = [
 ];
 
 const Header = ({ activeFilter, onFilterChange, mode, toggleMode }) => (
-  <div className="flex justify-between items-center">
-    <button onClick={() => onFilterChange(null)} aria-label="Home" className="">
+  <header className="flex justify-between items-center">
+    <a onClick={() => onFilterChange(null)}>
       <FiHome className="text-base sm:text-xl" />
-    </button>
+    </a>
     <div className="flex gap-2 md:gap-8 items-center justify-around">
       {menu.map((item) => (
-        <button
+        <a
           key={item.value}
           onClick={() => onFilterChange(item.value)}
           className={`tracking-wide text-xs leading-5 md:text-sm transition-colors ${
@@ -24,11 +24,11 @@ const Header = ({ activeFilter, onFilterChange, mode, toggleMode }) => (
           }`}
         >
           {item.label}
-        </button>
+        </a>
       ))}
       <ModeToggleCard toggleMode={toggleMode} mode={mode} />
     </div>
-  </div>
+  </header>
 );
 
 export default Header;

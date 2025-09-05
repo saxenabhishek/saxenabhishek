@@ -1,11 +1,10 @@
-import { LayoutGroup, motion } from "motion/react";
+import { motion } from "motion/react";
 import About from "./About.jsx";
 import Skills from "./leafComponents/Skills.jsx";
 import Education from "./Education.jsx";
 import Contact from "./Contact.jsx";
 import Header from "./Header.jsx";
 import SummaryCard from "./leafComponents/SummaryCard.jsx";
-import ProfileCard from "./ProfileCard.jsx";
 import ExperienceCardHolder from "./ExperienceCardHolder.jsx";
 import ProjectCardHolder from "./ProjectCardHolder.jsx";
 
@@ -22,7 +21,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
     ),
     tags: ["header"],
     className:
-      "col-span-1 md:col-span-3 lg:col-span-5 sticky top-2 z-10 shadow-sm bg-blend-hue  backdrop-blur-md py-2",
+      "col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-5 sticky top-2 z-10 shadow-sm bg-blend-hue  backdrop-blur-md py-2",
   };
 
   const cards = [
@@ -34,15 +33,16 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
     },
     {
       id: "profile",
-      component: <ProfileCard />,
+      component: <></>,
       tags: ["intro"],
-      className: "p-[0px]  relative",
+      className:
+        "bg-[url(/Profile-edited.webp)] w-2xs mx-auto sm:w-auto sm:m-0 bg-teal-50 dark:bg-green-50 transition-colors bg-center bg-cover bg-origin-border bg-no-repeat min-h-96 ",
     },
     {
       id: "skills",
       component: <Skills />,
       tags: ["skills"],
-      className: "lg:col-span-2",
+      className: "sm:col-span-2",
     },
     {
       id: "summary",
@@ -60,7 +60,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
         />
       ),
       tags: ["experience"],
-      className: "md:row-span-2 lg:col-span-2",
+      className: "sm:row-span-2 md:col-span-2 lg:col-span-2",
     },
     {
       id: "education",
@@ -72,7 +72,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
         />
       ),
       tags: ["education"],
-      className: "lg:col-span-2",
+      className: "md:col-span-2",
     },
     {
       id: "projects-header",
@@ -84,7 +84,7 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
         />
       ),
       tags: ["projects"],
-      className: "lg:col-span-2",
+      className: "md:col-span-2",
     },
     { id: "contact", component: <Contact />, tags: ["contact"] },
   ];
@@ -99,38 +99,33 @@ const BentoGrid = ({ filter, onFilterChange, mode, toggleMode }) => {
 
   sortedCards.unshift(headerCard);
   return (
-    <LayoutGroup>
-      <motion.div className="grid gap-4 grid-flow-dense grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-        {sortedCards.map((card) => {
-          const isActive =
-            !filter ||
-            card.tags.includes(filter) ||
-            card.tags.includes("header");
-          return (
-            <motion.div
-              layout="scale"
-              style={{ borderRadius: "8px" }}
-              layoutId={card.id}
-              key={card.id}
-              className={`${
-                card.className || ""
-              } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
-                filter && !isActive
-                  ? "opacity-20 dark:opacity-20"
-                  : "opacity-100"
-              } ${
-                filter && card.tags.includes(filter)
-                  ? "md:col-span-3 lg:col-span-5"
-                  : ""
-              }
-            `}
-            >
-              {card.component}
-            </motion.div>
-          );
-        })}
-      </motion.div>
-    </LayoutGroup>
+    <>
+      {sortedCards.map((card) => {
+        const isActive =
+          !filter || card.tags.includes(filter) || card.tags.includes("header");
+        return (
+          <motion.article
+            layout="scale"
+            style={{ borderRadius: "8px" }}
+            layoutId={card.id}
+            key={card.id}
+            className={`${
+              card.className || ""
+            } p-4 justify-center dark:border-white/50 border-black/50 border overflow-clip ${
+              filter && !isActive
+                ? "opacity-20 dark:opacity-20 "
+                : "opacity-100 "
+            } ${
+              filter && card.tags.includes(filter)
+                ? "md:col-span-3 lg:col-span-5 "
+                : ""
+            }`}
+          >
+            {card.component}
+          </motion.article>
+        );
+      })}
+    </>
   );
 };
 

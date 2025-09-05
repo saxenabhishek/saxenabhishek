@@ -14,6 +14,7 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
       <img
         src={project.image_url}
         style={{ borderRadius: 14 }}
+        width={"20%"}
         alt={`Project Photo ${project.name}`}
         loading="lazy"
         fetchPriority="low"
@@ -26,6 +27,7 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
       <motion.a
         layout="position"
         href={githubLink}
+        aria-label={`github link to ${project.name}`}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto underline absolute text-xs top-3 right-3"
@@ -36,12 +38,12 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
 
     <motion.div layout className="sm:w-2/3 w-full">
       <span className="flex justify-between">
-        <motion.h3
+        <motion.h2
           layout="position"
           className="text-lg tracking-[0.1px] md:tracking-normal md:text-xl leading-7 pb-1"
         >
           {project.name}
-        </motion.h3>
+        </motion.h2>
       </span>
       <p className="text-xs md:text-sm leading-3 md:leading-5 text-neutral-600 dark:text-neutral-400 pb-1">
         {project.summary}
@@ -50,7 +52,7 @@ const ProjectCard = ({ project, expanded, idx, githubLink }) => (
         {project.technologies.slice(0, 2).map((tech) => (
           <span
             key={`${idx}-${tech}`}
-            className="bg-teal-300/10 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light"
+            className="bg-teal-300/20 px-2 py-1 rounded-lg text-[11px] md:text-xs leading-4 tracking-wider font-light"
           >
             {tech}
           </span>
