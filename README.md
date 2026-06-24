@@ -1,31 +1,29 @@
-
 <h2>  
 <img src="https://emojis.slackmojis.com/emojis/images/1660415445/60820/grinning-cat-with-smiling-eyes.gif?1660415445">
 Hi, I'm Abhishek Saxena
 </h2>
 
-I'm a software engineer who enjoys building robust infrastructure, clean systems, and tools that scale. Right now, I'm working on my Master’s in Computer Engineering [@TheGeorgeWashingtonUniversity](https://github.com/gwuniversity), diving into intelligent systems and machine learning.
+I like finding where systems are slow and making them not slow. Usually that means Go, 
+sometimes it means rethinking the architecture entirely.
 
-💼 Previously [@Fidelity](https://github.com/fidelity), I led a team to ship a 401(k) optimization MVP projected to impact millions. I also built internal dashboards, helped streamline onboarding systems, and worked on core infra. Before that, I built logging platforms [@TuneHQ](https://github.com/TuneHQ) and worked with a chunk of the database layer [@Frappe](https://github.com/frappe).
+MS in Computer Engineering from [@TheGeorgeWashingtonUniversity](https://github.com/gwuniversity) 
+. Previously [@DuneSecurity](https://github.com/dunesecurity) — 
+7x API latency reduction, LLM agents on Bedrock, ML scheduler across 65K users. 
+Before that [@Fidelity](https://github.com/fidelity), [@TuneHQ](https://github.com/TuneHQ), 
+[@Frappe](https://github.com/frappe).
 
-🛠 Tools I reach for often:
+🛠 Default stack: **Go**, **Python**, **AWS** — will happily go lower-level
 
-**Python**, **Java**, **C++**, **AngularJS**  
-**FastAPI**, **PostgreSQL**, **Kubernetes**,  
-**Docker**, **PyTorch**, **AWS**, **GCP**
+🌱 Something I'm proud of:
 
-🌱 I'm always tinkering with new ideas. One I'm proud of:
-- 🎨 [PaletteNet](https://github.com/saxenabhishek/PaletteNet-Implementation): A deep learning model that recolors images using custom palettes — built the dataset, training loop, and everything in between.
+- 🎮 [Web 3DGS Viewer](https://github.com/saxenabhishek/splats): Real-time 
+Gaussian splatting in the browser using WebGPU compute shaders — OBB frustum culling, 
+depth sort offloaded to a dedicated worker, 30 FPS past 2M splats.
 
-
-If you're building something ambitious, curious, or just weird, let's talk.
+If you're building something ambitious, curious, or weird, let's talk.
 
 <div align="left">
   <a href="https://linkedin.com/in/saxenabhishek" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge" />
   </a>
-  <a href="mailto:abhishekkumar.saxena@gwmail.gwu.edu">
-    <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white&style=for-the-badge" />
-  </a>
 </div>
-
